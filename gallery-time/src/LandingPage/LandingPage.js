@@ -1,5 +1,5 @@
 import './LandingPage.css'
-import { geoLocatePost } from '../apiCalls'
+import { geoLocatePost, citySearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
 
 
@@ -11,7 +11,8 @@ function LandingPage () {
 
   useEffect(() => {
     geoLocatePost()
-    .then(data => setLatLon(data.location))
+    .then(geoData => citySearch(geoData.location.lat, geoData.location.lng))
+    .then(data => console.log(data.results[0].name))
   })
 
   return (
