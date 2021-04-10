@@ -12,11 +12,11 @@ function LandingPage () {
   useEffect(() => {
     geoLocatePost()
     .then(geoData => citySearch(geoData.location.lat, geoData.location.lng))
-    .then(data => console.log(data.results[0].name))
+    .then(data => setCity(data.results[0].name))
   })
 
   return (
-    <p>HI</p>
+    <p>{city}</p>
   )
 
 }
