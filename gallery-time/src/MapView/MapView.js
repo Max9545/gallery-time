@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './MapView.css';
 import { galleriesSearch } from '../apiCalls.js';
-import
+import { denverGalleries } from '../MockData/MockData.js'
 
-const MapView = () => {
+const MapView = ({ geoLocation }) => {
   const [galleries, setGalleries] = useState();
 
+  // useEffect(() => {
+  //   if (galleries === undefined) {
+  //     galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
+  //     .then(data => setGalleries(data))
+  //   }
+  // }, [])
   useEffect(() => {
     if (galleries === undefined) {
-      // galleriesSearch
+      setGalleries(denverGalleries);
     }
   }, [])
 

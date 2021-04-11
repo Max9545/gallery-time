@@ -1,7 +1,7 @@
 import './LandingPage.css'
 import { citySearch, photoSearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
-import {denverGeoLocation, denverNearbySearch, denverImg} from '../MockData/MockData.js'
+import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
 
 function LandingPage ({ geoLocation }) {

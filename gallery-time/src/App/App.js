@@ -3,8 +3,8 @@ import LandingPage from '../LandingPage/LandingPage';
 import {Route, Switch} from 'react-router-dom';
 import MapView from '../MapView/MapView.js';
 import { useState, useEffect } from 'react';
-import {geoLocatePost} from '../apiCalls.js'
-
+import { geoLocatePost } from '../apiCalls.js'
+import { denverGeoLocation } from '../MockData/MockData.js'
 function App() {
   const [geoLocation, setGeoLocation] = useState();
 
@@ -13,6 +13,9 @@ function App() {
   //   .then(data => setGeoLocation(data))
   // })
 
+  useEffect(() => {
+    setGeoLocation(denverGeoLocation);
+  })
 
   return (
     <Switch className='app'>
