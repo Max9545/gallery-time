@@ -7,7 +7,7 @@ export const geoLocatePost = () => {
   return fetch(`${geoLocateUrl}${key}`, {
     method: 'POST',
     headers: {
-      "content-type": "application/json" 
+      "content-type": "application/json"
     }
   })
   .then(res => res.json())
@@ -32,4 +32,15 @@ export const photoSearch = (photoReference) => {
   })
   .then(res => res.blob())
   .then(blob => URL.createObjectURL(blob))
+}
+
+
+export const galleriesSearch = (latitude, longitude) => {
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/nearbysearch/json?location=${latitude},${longitude}&radius=2000&type=art_gallery&key=${key}`, {
+    method: 'POST',
+    headers: {
+      "content-type": "application/json",
+    }
+  })
+  .then(res => res.json())
 }
