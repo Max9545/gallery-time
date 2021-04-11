@@ -2,12 +2,14 @@ import './LandingPage.css'
 import { geoLocatePost, citySearch, photoSearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
 import {denverGeoLocation, denverNearbySearch, denverImg} from '../MockData/MockData.js'
+import { Link } from 'react-router-dom';
 
 function LandingPage () {
 
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
 
+// mock data stuff
   useEffect(() => {
     setCity(denverNearbySearch.results[0]);
   }, [])
@@ -16,9 +18,7 @@ function LandingPage () {
     setPhoto(denverImg);
   },[city])
 
-
 // To use in production
-
   // useEffect(() => {
   //   if (city === undefined) {
   //     geoLocatePost()
@@ -28,7 +28,6 @@ function LandingPage () {
   // }, [])
 
 //  To use in production
-
   // useEffect(() => {
   //   if (city !== undefined) {
   //     photoSearch(city.photos[0].photo_reference)
@@ -38,8 +37,9 @@ function LandingPage () {
 
   return (
     <>
-    {city && <p>{city.name}</p>}
-    {photo && <img src={photo}/>}
+      {city && <p>{city.name}</p>}
+      {photo && <img src={photo}/>}
+      {city && <Link className='to-galleries' to={`/${city.name}`}>See Galleries</Link>}
     </>
   )
 
