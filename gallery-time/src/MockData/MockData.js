@@ -1707,7 +1707,7 @@ export const denverGalleries = {
 }
 
 
- export const RockyMountainCollegeOfArt = {
+ export const rockyMountainCollegeOfArt = {
   "html_attributions" : [],
   "result" : {
      "address_components" : [

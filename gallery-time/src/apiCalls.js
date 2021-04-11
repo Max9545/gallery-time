@@ -43,3 +43,14 @@ export const galleriesSearch = (latitude, longitude) => {
   })
   .then(res => res.json())
 }
+
+export const detailsSearch = (placeId) => {
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/details/json?place_id=${placeId}&key=${key}`, {
+    method: 'POST',
+    header: {
+      "content-type": "application/json",
+    }
+  })
+  .then(res => res.json())
+
+}
