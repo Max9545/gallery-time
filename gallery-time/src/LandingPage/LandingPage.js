@@ -7,7 +7,6 @@ function LandingPage () {
 
 
   const [city, setCity] = useState()
-  const [latLon, setLatLon] = useState()
   const [photo, setPhoto] = useState()
  
   useEffect(() => {
@@ -18,10 +17,8 @@ function LandingPage () {
 
   useEffect(() => {
     if (city !== undefined) {
-      console.log('in city', city.photos[0].photo_reference)
       photoSearch(city.photos[0].photo_reference)
       .then(data => setPhoto(data))
-      
     }
   },[city])
 
