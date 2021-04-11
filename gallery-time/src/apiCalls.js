@@ -18,8 +18,18 @@ export const citySearch = (latitude, longitude) => {
     method: 'POST',
     headers: {
       "content-type": "application/json",
-      "Accept":"*", 
     }
   })
   .then(res => res.json())
+}
+
+export const photoSearch = (photoReference) => {
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/photo?maxwidth=700&photoreference=${photoReference}&key=${key}`,{
+    method: 'POST',
+    headers: {
+      "content-type": "image/jpeg",
+    }
+  })
+  .then(res => res.blob())
+  .then(blob => URL.createObjectURL(blob))
 }
