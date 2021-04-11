@@ -36,7 +36,7 @@ function LandingPage ({ geoLocation }) {
     <>
       {city && <p>{city.name}</p>}
       {photo && <img src={photo}/>}
-      {city && <Link className='to-galleries' to={`/${city.name}`}>See Galleries</Link>}
+      {city && <Link className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
     </>
   )
 
