@@ -9,13 +9,15 @@ function LandingPage () {
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
  
-  useEffect(() => {
-    geoLocatePost()
-    .then(geoData => citySearch(geoData.location.lat, geoData.location.lng))
-    .then(city => setCity(city.results[0]))
+  // useEffect(() => {
+    if (city === undefined) {
+      geoLocatePost()
+      .then(geoData => citySearch(geoData.location.lat, geoData.location.lng))
+      .then(city => setCity(city.results[0]))
+    }
   }, [])
 
-  useEffect(() => {
+  // useEffect(() => {
     if (city !== undefined) {
       photoSearch(city.photos[0].photo_reference)
       .then(data => setPhoto(data))
