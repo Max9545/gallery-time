@@ -1,4 +1,4 @@
-const denverGeoLocation = {
+export const denverGeoLocation = {
   "location": {
       "lat": 39.7115392,
       "lng": -105.05420799999999
@@ -6,7 +6,7 @@ const denverGeoLocation = {
   "accuracy": 50428
 }
 
-const denverNearbySearch = {
+export const denverNearbySearch = {
   "html_attributions" : [],
   "next_page_token" : "ATtYBwLGvNarnw3a7pdGlRRSEhIlP-jLkoISTytdQJ6L8phal_xGL15p4TZgiRUIKOKwHxbqhRX_aoQ1sp304dr3p9nfcl7s2Mm8xTsCWWakJM1Dzz1fCyP8gESuK-M52dTGBn55Fih0j_JVsEYpTxPUqfkNIDP1KlHZX-YDxbhxIsPgBQb_ZXbFZCm7vMhr7_h_Ev7BQVt4dYv-n2jVxyrTL8hK315XWNLJea-o4d7Uu5Z3O8HyKPQRYWZwqjSG5ksFGjVzbY33ehDSYffHG8MkHA41VdrkgMX3OexZRP-ro-OA-WKesFwloclNZiY-FhQBX2TML8VNV0RPRUYPTBMwQOrUyTWP8qmaKovnueSLzpEevvr7mvYwD0-5SvhEWgJ9kRzEO5t48LIwKrkcXxNo1g_AGG5TMJxCBquhsjCtIx9p",
   "results" : [
@@ -874,9 +874,9 @@ const denverNearbySearch = {
   "status" : "OK"
 }
 
-const denverImg = 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Denver_skyline.jpg'
+export const denverImg = 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Denver_skyline.jpg'
 
-const denverGalleries = {
+export const denverGalleries = {
   "html_attributions" : [],
   "next_page_token" : "ATtYBwJds6lyZH10nwMmQb5hlsqIz-kzLA0vRRUHGZ7cpB9RJBdqR5ykNo6v3Gnnf2N8_F6Avd5vw4iBvWIbfcFJgO4h78B0ZbEbM0KnpRofyGYsIqHBKQEZU8DDUzRN0kHwtCUxANo7Bk_1aW_NEEVcJR-Ak28rQuo_CR-7rMxzDltGTHCLaJ5-0EiJcz1MOXM_pjTu7QZ2SAS_CciFkYmn0yFVLF2ctdRZ0ZJYBJgkBGNHLfzm1hPBNsSXQrMexq3rs5pMTFU9hg6BTcKXQLgMxqcunKTnbusHnY4IRC0I_k3pQECv-8dOrxoH9kcG6q1sUFotSvvUrwbWAthJaFKN8D0MBdfa9krsXj8_mxfYzebv-UewisrLepmJpXdsCpmvU8g80NwdWbb076uQ6QnSMG_hDL0SYxtlRCLKXww9i0rVte4zcPAOMxj5BPi5tA",
   "results" : [
@@ -1707,7 +1707,7 @@ const denverGalleries = {
 }
 
 
-const RockyMountainCollegeOfArt = {
+ export const RockyMountainCollegeOfArt = {
   "html_attributions" : [],
   "result" : {
      "address_components" : [
@@ -1995,4 +1995,3 @@ const RockyMountainCollegeOfArt = {
   },
   "status" : "OK"
 }
-
