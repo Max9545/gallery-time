@@ -33,11 +33,11 @@ function LandingPage ({ geoLocation }) {
 //   },[city])
 
   return (
-    <>
-      {city && <p>{city.name}</p>}
-      {photo && <img src={photo}/>}
-      {city && <Link className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
-    </>
+    <article data-cy="landing">
+      {city && <p data-cy="city-name">{city.name}</p>}
+      {photo && <img data-cy="city-img"src={photo}/>}
+      {city && <Link data-cy="to-galleries"className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
+    </article>
   )
 
 }

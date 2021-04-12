@@ -20,7 +20,9 @@ function GalleryDetail({ id }) {
   }, [])
 
   return (
-    <h1>GalleryDetail</h1>
+    <section data-cy="detail-gallery">
+      <h1>GalleryDetail</h1>
+    </section>
   )
 }
 
