@@ -39,9 +39,9 @@ const Galleries = ({ geoLocation }) => {
   }, [galleries])
 
   return (
-    <>
+    <section data-cy="galleries-page">
       {galleriesDisplay}
-    </>
+    </section>
   )
 }
 
