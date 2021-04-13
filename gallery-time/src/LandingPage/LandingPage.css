@@ -1,10 +1,25 @@
-/* .landing {
-  height: 80vh;
-} */
-
- .city-img {
+.landing {
+  background-color: blueviolet;
   height: 90vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-img {
+  height: 75vh;
+  width: 100vw;
+}
+
+.to-galleries {
+     background: linear-gradient(to right, #ff8e03, #044360) !important;
+     color: white;
+     padding: 3px;
+     font-weight: 400;
+     text-decoration: none;
+     border-radius: 1px;
+     margin: 4%;
+     width: 20vw;
 }
 
 
