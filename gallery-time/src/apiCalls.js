@@ -1,6 +1,9 @@
-require('dotenv').config();
+
+require('dotenv')
+
 const geoLocateUrl = 'https://www.googleapis.com/geolocation/v1/geolocate?key='
-const key = process.env.API_KEY;
+const key = process.env.API_KEY
+
 const mapsUrl = 'https://maps.googleapis.com/maps/api/'
 
 export const geoLocatePost = () => {
@@ -24,7 +27,7 @@ export const citySearch = (latitude, longitude) => {
 }
 
 export const photoSearch = (photoReference) => {
-  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/photo?maxwidth=700&photoreference=${photoReference}&key=${key}`,{
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/photo?maxwidth=576&photoreference=${photoReference}&key=${key}`,{
     method: 'POST',
     headers: {
       "content-type": "image/jpeg",

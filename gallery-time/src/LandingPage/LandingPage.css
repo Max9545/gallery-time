@@ -1,0 +1,31 @@
+.landing {
+  background-color: blueviolet;
+  height: 92vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-left: 2vw;
+}
+
+.city-img {
+  height: 75vh;
+  width: 100vw;
+}
+
+.to-galleries {
+     background: linear-gradient(to right, #0353ff, #27759a) !important;
+     color: white;
+     padding: 3px;
+     font-weight: 400;
+     text-decoration: none;
+     border-radius: 3px;
+     margin: 4%;
+     width: 20vw;
+}
+
+
