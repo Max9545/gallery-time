@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { geoLocatePost } from '../apiCalls.js';
 import { denverGeoLocation } from '../MockData/MockData.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
-
+require('dotenv').config();
 
 function App() {
   const [geoLocation, setGeoLocation] = useState();

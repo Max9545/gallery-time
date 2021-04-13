@@ -1,0 +1,39 @@
+.gallery-card {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url('../img/background-card.jpg');
+  background-size: cover;
+  margin: 1%;
+  height: 15vh;
+  box-shadow: 5px 5px 7px 2px rgba(176, 190, 197, .8),
+  -2px -2px 5px 1px rgba(176, 190, 197, .4);
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  padding: 1%;
+}
+
+.name {
+  margin: 1% 0 0 0;
+  color: rgba(38, 50, 56);
+}
+
+.rating {
+  margin: 1% 0 0 0;
+  color: rgba(38, 50, 56);
+}
+
+@media only screen and (max-width: 576px) {
+
+  .gallery-card {
+    width: 94%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2.5%;
+  }
+
+}
