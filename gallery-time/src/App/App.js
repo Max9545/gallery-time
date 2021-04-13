@@ -1,6 +1,5 @@
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
-import Header from '../Header/Header.js'
 import {Route, Switch} from 'react-router-dom';
 import Galleries from '../Galleries/Galleries.js';
 import { useState, useEffect } from 'react';
@@ -23,9 +22,8 @@ function App() {
   })
 
   return (
-    
+
     <>
-      <Header/>
 
       <Switch className='app'>
         <Route exact path='/' render={() => <LandingPage geoLocation={geoLocation}/>}/>

@@ -3,6 +3,7 @@ import './Galleries.css';
 import { galleriesSearch } from '../apiCalls.js';
 import { denverGalleries } from '../MockData/MockData.js';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
+import Header from '../Header/Header.js'
 
 const Galleries = ({ geoLocation }) => {
   const [galleries, setGalleries] = useState();
@@ -40,6 +41,7 @@ const Galleries = ({ geoLocation }) => {
 
   return (
     <section className="galleries-page" data-cy="galleries-page">
+      <Header />
       {galleriesDisplay}
     </section>
   )

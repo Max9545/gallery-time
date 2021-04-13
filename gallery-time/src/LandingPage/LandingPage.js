@@ -3,6 +3,7 @@ import { citySearch, photoSearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
 import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header.js'
 
 function LandingPage ({ geoLocation }) {
 
@@ -16,7 +17,6 @@ function LandingPage ({ geoLocation }) {
   useEffect(() => {
     setPhoto(denverImg);
   },[city])
-
 
 //   useEffect(() => {
 //     if (city === undefined) {
@@ -33,11 +33,18 @@ function LandingPage ({ geoLocation }) {
 //   },[city])
 
   return (
-    <article className='landing' data-cy="landing">
-      {city && <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>}
-      {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
-      {city && <Link data-cy="to-galleries"className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
-    </article>
+    <section className='landing' data-cy="landing">
+      <Header />
+      <article className='city-container'>
+        {city && <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>}
+      </article>
+      <article className='img-container'>
+        {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
+      </article>
+      <article className='galleries'>
+        {city && <Link data-cy="to-galleries"className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
+      </article>
+    </section>
   )
 
 }
