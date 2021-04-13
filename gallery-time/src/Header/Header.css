@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  /* justify-content: center; */
+  align-content: center;
+  background-color: #b99c6b;
+  height: 8vh;
+  width: 100vw;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+h1 {
+  color: black;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+}
+
+.logo {
+  height: 7vh;
+}
+
+.git-link {
+  font-size: 2em;
+  margin: 3vh 3vw 1vh 0;
+}
+
