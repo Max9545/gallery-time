@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './GalleryCard.css';
 
-function GalleryCard({ name, openNow, rating, id }) {
+function GalleryCard({ name, rating, id }) {
   return(
-    <Link data-cy="gallery-card" to={`/gallery/${id}`}>
-      <h1>{name}</h1>
-      <p>{openNow}</p>
-      <p>{rating}</p>
+    <Link className="gallery-card" data-cy="gallery-card" to={`/gallery/${id}`}>
+      <h1 className="name">{name}</h1>
+      <p className="rating">{`Rating ${rating}`}</p>
     </Link>
   )
 }

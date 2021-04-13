@@ -29,7 +29,6 @@ const Galleries = ({ geoLocation }) => {
             key={gallery.place_id}
             id={gallery.place_id}
             name={gallery.name}
-            // openNow={gallery.opening_hours.open_now}
             rating={gallery.rating}
           />
         )
@@ -37,6 +36,7 @@ const Galleries = ({ geoLocation }) => {
       setGalleriesDisplay(galleriesList);
     }
   }, [galleries])
+
 
   return (
     <section className="galleries-page" data-cy="galleries-page">
