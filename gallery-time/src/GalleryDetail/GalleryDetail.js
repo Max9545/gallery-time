@@ -15,18 +15,18 @@ function GalleryDetail({ id }) {
   //   }
   // }, [])
 
-  useEffect(() => {
-    if (detail === undefined) {
-      setDetail(rockyMountainCollegeOfArt)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (detail === undefined) {
+  //     setDetail(rockyMountainCollegeOfArt)
+  //   }
+  // }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
       <article className='styling-container'>
         <h1 className='gallery-name'>{detail && detail.result.name}</h1>
-        <p className='phone'>Phone Number</p>
+        <p className='phone'>{`Phone Number`}</p>
         <a className='phone' href={detail && `${detail.result.international_phone_number}`}>{detail && detail.result.international_phone_number}</a>
       </article>
       <article className='styling-container'>
@@ -42,7 +42,7 @@ function GalleryDetail({ id }) {
       <article className='styling-container'>
         <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
         <p className='bottom-card'>Link to Google map.</p>
-        <a className='bottom-card'>{detail && detail.result.url}</a>
+        <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
       <article className='styling-container'>
         <button className='fav-button'>Favorite</button>

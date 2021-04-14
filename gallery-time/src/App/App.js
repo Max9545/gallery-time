@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { geoLocatePost } from '../apiCalls.js';
 import { denverGeoLocation } from '../MockData/MockData.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
-require('dotenv').config();
+
 
 function App() {
   const [geoLocation, setGeoLocation] = useState();
@@ -19,12 +19,10 @@ function App() {
 
   useEffect(() => {
     setGeoLocation(denverGeoLocation);
-  })
+  }, [])
 
   return (
-
     <>
-
       <Switch className='app'>
         <Route exact path='/' render={() => <LandingPage geoLocation={geoLocation}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries geoLocation={geoLocation} city={match.params.city}/>}/>
