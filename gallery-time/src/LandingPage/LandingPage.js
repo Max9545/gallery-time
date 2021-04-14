@@ -3,7 +3,7 @@ import { citySearch, photoSearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
 import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header.js'
+import Header from '../Header/Header.js';
 
 function LandingPage ({ geoLocation }) {
 
@@ -24,7 +24,7 @@ function LandingPage ({ geoLocation }) {
 //      .then(city => setCity(city.results[0]))
 //     }
 //   }, [])
-//
+
 //   useEffect(() => {
 //     if (city !== undefined) {
 //       photoSearch(city.photos[0].photo_reference)

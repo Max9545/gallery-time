@@ -1,7 +1,8 @@
 import './GalleryDetail.css';
 import React, { useEffect, useState } from 'react';
 import { detailsSearch } from '../apiCalls.js';
-import { rockyMountainCollegeOfArt } from '../MockData/MockData.js'
+import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
+import Header from '../Header/Header.js';
 
 function GalleryDetail({ id }) {
   const [detail, setDetail] = useState();
@@ -20,8 +21,11 @@ function GalleryDetail({ id }) {
   }, [])
 
   return (
-    <section data-cy="detail-gallery">
-      <h1>GalleryDetail</h1>
+    <section data-cy='detail-gallery'>
+      <Header />
+      <h1>{detail && detail.result.name}</h1>
+      <article>
+      </article>
     </section>
   )
 }

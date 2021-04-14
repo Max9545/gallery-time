@@ -15,7 +15,7 @@
 
 .city-img {
   margin: 0;
-  height: 80vh;
+  height: 77vh;
   width: 90vw;
 }
 
@@ -27,7 +27,7 @@
 
 .to-galleries {
   text-align: center;
-  background-color: rgba(185, 156, 107, .6);
+  background-color: rgba(212, 175, 55, .75);
   color: black;
   padding: .5% 10% .5% 10%;
   font-weight: 400;

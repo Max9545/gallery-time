@@ -15,7 +15,7 @@ function App() {
   //  if(geoLocation === undefined)
   //   geoLocatePost()
   //   .then(data => setGeoLocation(data))
-  // })
+  // }, [])
 
   useEffect(() => {
     setGeoLocation(denverGeoLocation);
