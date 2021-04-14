@@ -5,7 +5,8 @@ import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 
-function GalleryDetail({ id }) {
+function GalleryDetail({ id, setFavorites }) {
+
   const [detail, setDetail] = useState();
 
   // useEffect(() => {
@@ -15,11 +16,11 @@ function GalleryDetail({ id }) {
   //   }
   // }, [])
 
-  // useEffect(() => {
-  //   if (detail === undefined) {
-  //     setDetail(rockyMountainCollegeOfArt)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (detail === undefined) {
+      setDetail(rockyMountainCollegeOfArt)
+    }
+  }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
@@ -45,11 +46,10 @@ function GalleryDetail({ id }) {
         <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
       <article className='styling-container'>
-        <button className='fav-button'>Favorite</button>
+        <button className='fav-button' onClick={() => setFavorites(detail.result.place_id)}>Favorite</button>
       </article>
     </section>
   )
-
 }
 
 export default GalleryDetail;
