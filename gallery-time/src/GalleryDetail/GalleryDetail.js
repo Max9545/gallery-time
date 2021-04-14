@@ -5,7 +5,7 @@ import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 
-function GalleryDetail({ id, setFavorites }) {
+function GalleryDetail({ id, addToFavorites }) {
 
   const [detail, setDetail] = useState();
 
@@ -46,7 +46,8 @@ function GalleryDetail({ id, setFavorites }) {
         <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
       <article className='styling-container'>
-        <button className='fav-button' onClick={() => setFavorites(detail.result.place_id)}>Favorite</button>
+        <button className='fav-button' onClick={() => addToFavorites(detail.result.place_id)}>Favorite</button>
+        <Link to='/favorites' className='fav-button'>See Favorites</Link>
       </article>
     </section>
   )
