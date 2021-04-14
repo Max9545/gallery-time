@@ -1,1 +1,111 @@
+.detail-gallery {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: url('../img/galleries-background.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
 
+.styling-container {
+  width: 90vw;
+  background: url('../img/background-card.jpg');
+  background-size: cover;
+  box-shadow: 5px 5px 7px 2px rgba(176, 190, 197, .8),
+  -2px -2px 5px 1px rgba(176, 190, 197, .4);
+  margin: 1.4%;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.gallery-name {
+  font-size: 2em;
+  margin: 1% 0 0 .5%;
+}
+
+.phone {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: .5%;
+}
+
+.fav-button {
+  width: 30vw;
+}
+
+.hours {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1% 0 0 .5%;
+}
+
+.day-time {
+  font-size: 1em;
+  margin: .5%;
+}
+
+.bottom-card {
+  font-size: 1em;
+  margin: .5%;
+  font-weight: bold;
+}
+
+.fav-button {
+  background-color: rgba(212, 175, 55, .7);
+  font-weight: bold;
+  margin: 1%;
+  padding: .5% 10% .5% 10%;
+  border-radius: 16px;
+  border: none;
+}
+
+@media only screen and (max-width: 576px) {
+
+  .styling-container {
+    margin: 2.7%;
+    padding: 2%;
+  }
+
+  .gallery-name {
+    font-size: 1.5em;
+    margin: 1% 0 0 1%;
+  }
+
+  .phone {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin: 1%;
+  }
+
+  .fav-button {
+    width: 30vw;
+  }
+
+  .hours {
+    font-size: 1.25em;
+    margin: 1% 0 0 1.75%;
+  }
+
+  .day-time {
+    margin: 1.2%;
+  }
+
+  .bottom-card {
+    margin: 1.1%;
+  }
+
+  .fav-button {
+    font-size: 1.25em;
+    width: 80vw;
+    margin: 1%;
+    padding: 1% 10% 1% 10%;
+  }
+
+
+}

@@ -1,31 +1,56 @@
 .header {
   display: flex;
-  /* justify-content: center; */
   align-content: center;
-  background-color: #b99c6b;
+  background-color: rgba(212, 175, 55, .75);
   height: 8vh;
   width: 100vw;
   text-decoration: none;
-  justify-content: space-between;
 }
 
-h1 {
+.site-name {
+  font-size: 2.5em;
   color: black;
   align-self: flex-start;
   margin: 0;
 }
 
-.header-container {
+.header-link {
+  width: 10%;
   display: flex;
 }
 
 .logo {
   height: 8vh;
-  margin-left: 2vw;
+  margin: 0 2vh 0 2vh;
 }
 
 .git-link {
-  font-size: 2em;
+  font-size: 3em;
   margin: 3vh 3vw 1vh 0;
 }
 
+.header-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 576px) {
+
+  .site-name {
+    font-size: 1.5em;
+  }
+
+  .header-link {
+    width: 20%;
+  }
+
+  .git-link {
+    font-size: 2em;
+  }
+
+  .header-container {
+    width: 80%;
+  }
+}

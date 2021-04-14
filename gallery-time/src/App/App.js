@@ -1,6 +1,5 @@
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
-import Header from '../Header/Header.js'
 import {Route, Switch} from 'react-router-dom';
 import Galleries from '../Galleries/Galleries.js';
 import { useState, useEffect } from 'react';
@@ -8,7 +7,6 @@ import { geoLocatePost } from '../apiCalls.js';
 import { denverGeoLocation } from '../MockData/MockData.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
 require('dotenv').config();
-console.log(process.env.REACT_APP_API_KEY)
 
 function App() {
 
@@ -18,16 +16,14 @@ function App() {
   //  if(geoLocation === undefined)
   //   geoLocatePost()
   //   .then(data => setGeoLocation(data))
-  // },[])
+  // }, [])
 
   useEffect(() => {
     setGeoLocation(denverGeoLocation);
   }, [])
 
   return (
-    
     <>
-      <Header/>
       <Switch className='app'>
         {geoLocation && <Route exact path='/' render={() => <LandingPage geoLocation={geoLocation}/>}/>}
         <Route exact path='/city/:city' render={({ match }) => <Galleries geoLocation={geoLocation} city={match.params.city}/>}/>
