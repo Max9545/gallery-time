@@ -1,4 +1,3 @@
-
 const geoLocateUrl = 'https://www.googleapis.com/geolocation/v1/geolocate?key='
 const key = process.env.REACT_APP_API_KEY
 
