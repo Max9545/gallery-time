@@ -1,5 +1,5 @@
 import './LandingPage.css'
-import { citySearch, photoSearch } from '../apiCalls'
+import { citySearch, geoLocatePost, photoSearch } from '../apiCalls'
 import { useEffect, useState } from 'react';
 import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
