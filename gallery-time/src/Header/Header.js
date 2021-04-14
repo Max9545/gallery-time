@@ -9,7 +9,7 @@ function Header () {
       </Link>
       <article className='header-container'>
         <div>
-          <h1 className='site-name'>GalleryTime</h1>
+          <h1 className='site-name'>Gallery Time</h1>
         </div>
         <div>
           <p className='git-link'>📧</p>

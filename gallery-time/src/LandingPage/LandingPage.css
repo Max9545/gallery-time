@@ -8,8 +8,8 @@
 }
 
 .city-name {
-  margin: 0;
-  font-size: 1.1em;
+  margin: 1%;
+  font-size: 1.25em;
   font-weight: 600;
 }
 
@@ -19,15 +19,22 @@
   width: 90vw;
 }
 
+.galleries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .to-galleries {
-     background: linear-gradient(to right, #0353ff, #27759a) !important;
-     color: white;
-     padding: 3px;
-     font-weight: 400;
-     text-decoration: none;
-     border-radius: 3px;
-     margin: 4%;
-     width: 20vw;
+  text-align: center;
+  background-color: rgba(185, 156, 107, .6);
+  color: black;
+  padding: .5% 10% .5% 10%;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 6px;
+  width: 20vw;
+  margin: 1%;
 }
 
 .img-container{
@@ -37,5 +44,35 @@
 
 .city-container {
   display: flex;
+  justify-content: center;
   text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+
+  .city-container {
+    margin: 1%;
+  }
+
+  .city-name {
+    margin: 1%;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  .galleries {
+    margin: 2%;
+  }
+
+  .to-galleries {
+    width: 78vw;
+    font-weight: 600;
+    padding: 2% 19% 2% 19%;
+  }
+
+  .city-img {
+    height: 79vh;
+
+  }
+
 }
