@@ -1,11 +1,9 @@
 
-require('dotenv')
-
 const geoLocateUrl = 'https://www.googleapis.com/geolocation/v1/geolocate?key='
-const key = process.env.API_KEY
+const key = process.env.REACT_APP_API_KEY
 
 const mapsUrl = 'https://maps.googleapis.com/maps/api/'
-
+console.log(typeof key)
 export const geoLocatePost = () => {
   return fetch(`${geoLocateUrl}${key}`, {
     method: 'POST',
