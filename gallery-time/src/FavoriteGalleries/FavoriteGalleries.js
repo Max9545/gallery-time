@@ -7,7 +7,7 @@ function FavoriteGalleries ({ favorites }) {
 
 
   const [galleries, setGalleries] = useState();
-  const [galleriesDisplay, setGalleriesDisplay] = useState();
+  const [galleriesDisplay, setGalleriesDisplay] = useState([]);
 
 
   useEffect(() => {
