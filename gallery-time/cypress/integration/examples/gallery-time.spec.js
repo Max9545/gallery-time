@@ -5,6 +5,7 @@ context('Gallery Time', () => {
   });
 
   beforeEach(() => {
+    // cy.citySearchAPICall()
     cy.visit('http://localhost:3000/')
   })
 
