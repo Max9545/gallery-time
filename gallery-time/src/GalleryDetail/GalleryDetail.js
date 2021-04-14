@@ -22,29 +22,31 @@ function GalleryDetail({ id }) {
   }, [])
 
   return (
-    <section data-cy='detail-gallery'>
+    <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-      <h1>{detail && detail.result.name}</h1>
-      <p>Phone Number</p>
-      <p>{detail && detail.result.international_phone_number}</p>
-      <article>
-        <h2>Hours</h2>
-        <p>{detail && detail.result.opening_hours.weekday_text[0]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[1]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[2]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[3]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[4]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[5]}</p>
-        <p>{detail && detail.result.opening_hours.weekday_text[6]}</p>
+      <article className='styling-container'>
+        <h1 className='gallery-name'>{detail && detail.result.name}</h1>
+        <p className='phone'>Phone Number</p>
+        <a className='phone' href={detail && `${detail.result.international_phone_number}`}>{detail && detail.result.international_phone_number}</a>
       </article>
-      <article>
-        <p>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
+      <article className='styling-container'>
+        <h2 className='hours'>Hours</h2>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[0]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[1]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[2]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[3]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[4]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[5]}</p>
+        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[6]}</p>
       </article>
-      <article>
-        <p>Link to Google map.</p>
-        <Link>{detail && detail.result.url}</Link>
+      <article className='styling-container'>
+        <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
+        <p className='bottom-card'>Link to Google map.</p>
+        <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
-      <button>Favorite</button>
+      <article className='styling-container'>
+        <button className='fav-button'>Favorite</button>
+      </article>  
     </section>
   )
 

@@ -1,14 +1,13 @@
 .galleries-page {
   width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   background: url('../img/galleries-background.jpg');
-  background-size: cover;
   background-repeat: repeat;
+  background-size: cover;
 }
 
 @media only screen and (max-width: 576px) {
