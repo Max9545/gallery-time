@@ -46,8 +46,8 @@ function GalleryDetail({ id, addToFavorites }) {
         <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
       <article className='styling-container'>
-        <button className='fav-button' onClick={() => addToFavorites(detail.result.place_id)}>Favorite</button>
-        <Link to='/favorites' className='fav-button'>See Favorites</Link>
+        <button className='fav-button' onClick={() => addToFavorites(detail.result)}>Favorite</button>
+        <Link to='/favorites' className='fav-button' data-cy='fav-button'>See Favorites</Link>
       </article>
     </section>
   )

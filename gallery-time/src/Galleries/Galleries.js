@@ -6,6 +6,7 @@ import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import Header from '../Header/Header.js'
 
 const Galleries = ({ geoLocation }) => {
+  
   const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState();
 
