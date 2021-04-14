@@ -12,13 +12,15 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+
 /**
- * @type {Cypress.PluginConfig}
+// @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
+require('dotenv').config()
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  config.env.API_KEY = process.env.REACT_APP_API_KEY
+  return config
 }
 
 // const dotenvPlugin = require('cypress-dotenv');
