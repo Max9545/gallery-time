@@ -42,11 +42,11 @@ function GalleryDetail({ id }) {
       <article className='styling-container'>
         <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
         <p className='bottom-card'>Link to Google map.</p>
-        <Link className='bottom-card'>{detail && detail.result.url}</Link>
+        <a className='bottom-card'>{detail && detail.result.url}</a>
       </article>
       <article className='styling-container'>
         <button className='fav-button'>Favorite</button>
-      </article>  
+      </article>
     </section>
   )
 

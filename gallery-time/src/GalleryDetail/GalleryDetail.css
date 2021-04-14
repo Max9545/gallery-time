@@ -68,7 +68,7 @@
 @media only screen and (max-width: 576px) {
 
   .styling-container {
-    margin: 3%;
+    margin: 2.7%;
     padding: 2%;
   }
 
@@ -97,13 +97,14 @@
   }
 
   .bottom-card {
-    margin: 1.2%;
+    margin: 1.1%;
   }
 
   .fav-button {
+    font-size: 1.25em;
     width: 80vw;
     margin: 1%;
-    padding: 1.5% 10% 1.5% 10%;
+    padding: 1% 10% 1% 10%;
   }
 
 
