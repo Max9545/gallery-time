@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import Header from '../Header/Header'
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
+import './FavoriteGalleries.css'
 
 function FavoriteGalleries ({ favorites }) {
 
@@ -32,7 +34,11 @@ function FavoriteGalleries ({ favorites }) {
   }, [galleries])
 
   return (
-    <p>{galleriesDisplay && galleriesDisplay}</p>
+    <section className="favorites-page" data-cy="favorites-page">
+      <Header/>
+      <p className='favorites-header'>Favorite Galleries so far</p>
+      {galleriesDisplay}
+    </section>
   )
 }
 export default FavoriteGalleries

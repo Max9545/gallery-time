@@ -43,6 +43,7 @@ function LandingPage ({ geoLocation }) {
       </article>
       <article className='galleries'>
         {city && <Link data-cy="to-galleries"className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
+        <Link to='/favorites' className='see-favorites-button' data-cy='see-favorites-button'>See Favorites</Link>
       </article>
     </section>
   )
