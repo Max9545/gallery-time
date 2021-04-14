@@ -25,6 +25,12 @@ context('Gallery Time', () => {
     .get("[data-cy=gallery-card]").first().click()
     .get("[data-cy=detail-gallery]").should("exist")
     .get("[data-cy=header-box]").should("exist")
+    .get("[data-cy=top-card]").should("exist")
+    .get("[data-cy=name]").should("contain", "Rocky Mountain College of Art + Design")
+    .get("[data-cy=hours-card]").should("exist").and("contain", "Hours")
+    .get("[data-cy=rating-card]").should("exist").and("contain", "Link to Google map")
+    .get("[data-cy=button-card]").should("exist").and("contain", "Favorite")
+    .get("[data-cy=fav-button]").click()
   })
 
   it('Should have a way to return to the landing page from any view', () => {
