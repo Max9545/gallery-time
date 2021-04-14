@@ -1,8 +1,10 @@
 .favorites-page {
   width: 100vw;
+  /* height: 100vh; */
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   background: url('../img/galleries-background.jpg');
@@ -19,7 +21,21 @@
   font-weight: 600;
   font-style: oblique;
   font-size: 1.1em;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+  text-align: center;
+  width: 75vw;
+  align-self: center;
+}
+
+.no-favorites {
+  background-color: rgba(212, 175, 55);
+  padding: 2%;
+  border-radius: 3px;
+  font-weight: 600;
+  text-align: center;
+  width: 75vw;
+  align-self: center;
+  font-size: .8em;
 }
 
 @media only screen and (max-width: 576px) {

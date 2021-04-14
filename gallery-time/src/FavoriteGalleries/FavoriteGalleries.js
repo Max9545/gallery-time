@@ -38,6 +38,7 @@ function FavoriteGalleries ({ favorites }) {
       <Header/>
       <p className='favorites-header'>Favorite Galleries so far</p>
       {galleriesDisplay}
+      {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>}
     </section>
   )
 }
