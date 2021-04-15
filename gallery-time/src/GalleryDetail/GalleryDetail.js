@@ -9,6 +9,7 @@ function GalleryDetail({ id, addToFavorites }) {
 
   const [detail, setDetail] = useState();
 
+
   useEffect(() => {
     if (detail === undefined) {
       detailsSearch(id)
@@ -16,11 +17,12 @@ function GalleryDetail({ id, addToFavorites }) {
     }
   }, [])
 
-  // useEffect(() => {
-  //   if (detail === undefined) {
-  //     setDetail(rockyMountainCollegeOfArt)
-  //   }
-  // }, [])
+
+  useEffect(() => {
+    if (detail === undefined) {
+      setDetail(rockyMountainCollegeOfArt)
+    }
+  }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
@@ -56,6 +58,7 @@ function GalleryDetail({ id, addToFavorites }) {
             <Link to='/favorites' className='see-favorites-detail' data-cy='see-favorites-detail'>See Favorites</Link>
           </article>
           </>}
+
     </section>
   )
 }

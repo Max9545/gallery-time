@@ -33,6 +33,8 @@ function LandingPage ({ geoLocation }) {
     }
   },[city])
 
+
+
   return (
     <section className='landing' data-cy="landing">
       <Header />
