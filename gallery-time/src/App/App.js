@@ -9,7 +9,7 @@ import { denverGeoLocation } from '../MockData/MockData.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
 require('dotenv').config();
 
-// function App() {
+function App() {
 
   const [geoLocation, setGeoLocation] = useState();
   const [favorites, setFavorites] = useState([])
