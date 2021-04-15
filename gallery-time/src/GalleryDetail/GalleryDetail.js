@@ -9,9 +9,10 @@ function GalleryDetail({ id }) {
   const [detail, setDetail] = useState();
 
   // useEffect(() => {
+  //   console.log(id)
   //   if (detail === undefined) {
   //     detailsSearch(id)
-  //     .then(data => setDetail(data.result))
+  //     .then(data => setDetail(data))
   //   }
   // }, [])
 
