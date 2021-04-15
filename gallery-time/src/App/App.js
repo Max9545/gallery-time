@@ -31,14 +31,12 @@ require('dotenv').config();
   // }, [])
 
   return (
-    <>
       <Switch className='app'>
         {geoLocation && <Route exact path='/' render={() => <LandingPage geoLocation={geoLocation}/>}/>}
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} />}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries geoLocation={geoLocation} city={match.params.city}/>}/>
         <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail id={ match.params.gallery } addToFavorites={addToFavorites}/>}/>
       </Switch>
-    </>
   );
 }
 
