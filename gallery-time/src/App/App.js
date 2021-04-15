@@ -9,16 +9,16 @@ import { denverGeoLocation } from '../MockData/MockData.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
 require('dotenv').config();
 
-function App() {
+// function App() {
 
   const [geoLocation, setGeoLocation] = useState();
   const [favorites, setFavorites] = useState([])
 
-  // useEffect(() => {
-  //  if(geoLocation === undefined)
-  //   geoLocatePost()
-  //   .then(data => setGeoLocation(data))
-  // }, [])
+  useEffect(() => {
+   if(geoLocation === undefined)
+    geoLocatePost()
+    .then(data => setGeoLocation(data))
+  }, [])
 
   const addToFavorites = newGalleryID => {
     if(!favorites.includes(newGalleryID)) {
@@ -26,9 +26,9 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    setGeoLocation(denverGeoLocation);
-  }, [])
+  // useEffect(() => {
+  //   setGeoLocation(denverGeoLocation);
+  // }, [])
 
   return (
     <>

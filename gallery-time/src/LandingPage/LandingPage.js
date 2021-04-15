@@ -10,27 +10,28 @@ function LandingPage ({ geoLocation }) {
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
 
+  // useEffect(() => {
+  //   setCity(denverNearbySearch.results[0]);
+  // }, [])
+
+  // useEffect(() => {
+  //   setPhoto(denverImg);
+  // },[city])
+
   useEffect(() => {
-    setCity(denverNearbySearch.results[0]);
+    if (city === undefined) {
+      console.log(geoLocation)
+     citySearch(geoLocation.location.lat, geoLocation.location.lng)
+     .then(city => setCity(city.results[0]))
+    }
   }, [])
 
   useEffect(() => {
-    setPhoto(denverImg);
+    if (city !== undefined) {
+      photoSearch(city.photos[0].photo_reference)
+      .then(data => setPhoto(data))
+    }
   },[city])
-
-//   useEffect(() => {
-//     if (city === undefined) {
-//      citySearch(geoLocation.location.lat, geoLocation.location.lng)
-//      .then(city => setCity(city.results[0]))
-//     }
-//   }, [])
-
-//   useEffect(() => {
-//     if (city !== undefined) {
-//       photoSearch(city.photos[0].photo_reference)
-//       .then(data => setPhoto(data))
-//     }
-//   },[city])
 
   return (
     <section className='landing' data-cy="landing">
