@@ -9,27 +9,28 @@ function GalleryDetail({ id }) {
   const [detail, setDetail] = useState();
 
   // useEffect(() => {
+  //   console.log(id)
   //   if (detail === undefined) {
   //     detailsSearch(id)
-  //     .then(data => setDetail(data.result))
+  //     .then(data => setDetail(data))
   //   }
   // }, [])
 
-  // useEffect(() => {
-  //   if (detail === undefined) {
-  //     setDetail(rockyMountainCollegeOfArt)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (detail === undefined) {
+      setDetail(rockyMountainCollegeOfArt)
+    }
+  }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-      <article className='styling-container'>
-        <h1 className='gallery-name'>{detail && detail.result.name}</h1>
+      <article className='styling-container' data-cy='top-card'>
+        <h1 className='gallery-name' data-cy='name'>{detail && detail.result.name}</h1>
         <p className='phone'>{`Phone Number`}</p>
         <a className='phone' href={detail && `${detail.result.international_phone_number}`}>{detail && detail.result.international_phone_number}</a>
       </article>
-      <article className='styling-container'>
+      <article className='styling-container' data-cy='hours-card'>
         <h2 className='hours'>Hours</h2>
         <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[0]}</p>
         <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[1]}</p>
@@ -39,13 +40,13 @@ function GalleryDetail({ id }) {
         <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[5]}</p>
         <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[6]}</p>
       </article>
-      <article className='styling-container'>
+      <article className='styling-container' data-cy='rating-card'>
         <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
         <p className='bottom-card'>Link to Google map.</p>
         <Link className='bottom-card'>{detail && detail.result.url}</Link>
       </article>
-      <article className='styling-container'>
-        <button className='fav-button'>Favorite</button>
+      <article className='styling-container' data-cy='button-card'>
+        <button className='fav-button' data-cy='fav-button'>Favorite</button>
       </article>
     </section>
   )
