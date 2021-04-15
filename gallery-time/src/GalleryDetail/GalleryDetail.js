@@ -5,16 +5,18 @@ import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 
-function GalleryDetail({ id }) {
+function GalleryDetail({ id, addToFavorites }) {
+
   const [detail, setDetail] = useState();
 
-  // useEffect(() => {
-  //   console.log(id)
-  //   if (detail === undefined) {
-  //     detailsSearch(id)
-  //     .then(data => setDetail(data))
-  //   }
-  // }, [])
+
+  useEffect(() => {
+    if (detail === undefined) {
+      detailsSearch(id)
+      .then(data => setDetail(data))
+    }
+  }, [])
+
 
   useEffect(() => {
     if (detail === undefined) {
@@ -25,32 +27,41 @@ function GalleryDetail({ id }) {
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-      <article className='styling-container' data-cy='top-card'>
-        <h1 className='gallery-name' data-cy='name'>{detail && detail.result.name}</h1>
-        <p className='phone'>{`Phone Number`}</p>
-        <a className='phone' href={detail && `${detail.result.international_phone_number}`}>{detail && detail.result.international_phone_number}</a>
-      </article>
-      <article className='styling-container' data-cy='hours-card'>
-        <h2 className='hours'>Hours</h2>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[0]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[1]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[2]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[3]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[4]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[5]}</p>
-        <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[6]}</p>
-      </article>
-      <article className='styling-container' data-cy='rating-card'>
-        <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
-        <p className='bottom-card'>Link to Google map.</p>
-        <Link className='bottom-card'>{detail && detail.result.url}</Link>
-      </article>
-      <article className='styling-container' data-cy='button-card'>
-        <button className='fav-button' data-cy='fav-button'>Favorite</button>
-      </article>
+
+        {detail &&
+        <>
+          <article className='styling-container'>
+            <h1 className='gallery-name'>{detail.result.name && detail.result.name}</h1>
+            <p className='phone'>{`Phone Number`}</p>
+            <a className='phone' href={detail && `${detail.result.international_phone_number}`}>{detail && detail.result.international_phone_number}</a>
+          </article>
+          <article className='styling-container'>
+            {!detail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
+            {detail.result.opening_hours &&
+            <>
+              <h2 className='hours'>Hours</h2>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[0]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[1]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[2]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[3]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[4]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[5]}</p>
+              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[6]}</p>
+            </>}
+            </article>
+          <article className='styling-container'>
+            <p className='bottom-card'>{detail && `Average rating ${detail.result.rating} from ${detail.result.user_ratings_total} people.`}</p>
+            <p className='bottom-card'>Link to Google map.</p>
+            <Link className='bottom-card'>{detail && detail.result.url}</Link>
+          </article>
+          <article className='styling-container'>
+            <button className='add-favorite-button' onClick={() => addToFavorites(detail.result)}>Favorite This Gallery</button>
+            <Link to='/favorites' className='see-favorites-detail' data-cy='see-favorites-detail'>See Favorites</Link>
+          </article>
+          </>}
+
     </section>
   )
-
 }
 
 export default GalleryDetail;

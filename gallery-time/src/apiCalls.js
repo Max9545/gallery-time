@@ -3,7 +3,7 @@ const key = process.env.REACT_APP_API_KEY
 
 const mapsUrl = 'https://maps.googleapis.com/maps/api/'
 export const geoLocatePost = () => {
-  return fetch(`https://pure-hollows-05817.herokuapp.com/${geoLocateUrl}${key}`, {
+  return fetch(`${geoLocateUrl}${key}`, {
     method: 'POST',
     headers: {
       "content-type": "application/json"

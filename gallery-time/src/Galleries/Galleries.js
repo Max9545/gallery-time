@@ -6,21 +6,22 @@ import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import Header from '../Header/Header.js'
 
 const Galleries = ({ geoLocation }) => {
+
   const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState();
 
-  // useEffect(() => {
-  //   if (galleries === undefined) {
-  //     galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
-  //     .then(data => setGalleries(data))
-  //   }
-  // }, [])
-
   useEffect(() => {
     if (galleries === undefined) {
-      setGalleries(denverGalleries);
+      galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
+      .then(data => setGalleries(data))
     }
   }, [])
+
+  // useEffect(() => {
+  //   if (galleries === undefined) {
+  //     setGalleries(denverGalleries);
+  //   }
+  // }, [])
 
   useEffect(() => {
     if(galleries) {
@@ -42,7 +43,7 @@ const Galleries = ({ geoLocation }) => {
   return (
     <section className="galleries-page" data-cy="galleries-page">
       <Header />
-      {galleriesDisplay}
+      {galleriesDisplay && galleriesDisplay}
     </section>
   )
 }
