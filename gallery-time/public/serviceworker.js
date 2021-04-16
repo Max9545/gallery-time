@@ -19,7 +19,6 @@ self.addEventListener('fetch', (event) => {
     .then(() => {
       return fetch(event.request)
       console.log()
-      // need to look at making line 56 return out current saved catch.
       .catch(() => caches.match('offline.html'))
 
     })
