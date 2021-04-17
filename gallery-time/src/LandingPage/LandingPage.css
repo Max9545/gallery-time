@@ -25,16 +25,16 @@
   align-items: center;
 }
 
-.to-galleries {
+.landing-buttons {
   text-align: center;
   background-color: rgba(212, 175, 55, .75);
   color: black;
   padding: .5% 10% .5% 10%;
-  font-weight: 600;
   text-decoration: none;
   border-radius: 6px;
   width: 20vw;
   margin: 1%;
+  font-weight: 600;
 }
 
 .img-container{
@@ -48,27 +48,8 @@
   text-align: center;
 }
 
-.see-favorites-landing {
-  text-align: center;
-  background-color: rgba(212, 175, 55, .75);
-  color: black;
-  padding: .5% 10% .5% 10%;
-  text-decoration: none;
-  border-radius: 6px;
-  width: 20vw;
-  margin: 1%;
-  font-weight: 600;
-}
-
 
 @media only screen and (max-width: 576px) {
-
-
-  .see-favorites-landing {
-    width: 78vw;
-    font-weight: 600;
-    padding: 2% 19% 2% 19%;
-  }
 
   .city-container {
     margin: 1%;
@@ -80,18 +61,18 @@
     font-weight: 600;
   }
 
+  .landing-buttons {
+    font-weight: 600;
+    padding: 2% 13% 2% 13%;
+  }
+
   .galleries {
     margin: 2%;
   }
 
-  .to-galleries {
-    width: 78vw;
-    font-weight: 600;
-    padding: 2% 19% 2% 19%;
-  }
 
   .city-img {
-    height: 79vh;
+    height: 76vh;
   }
 
 }

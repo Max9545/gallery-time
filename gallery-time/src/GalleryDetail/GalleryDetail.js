@@ -6,9 +6,7 @@ import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 
 function GalleryDetail({ id, addToFavorites }) {
-
   const [detail, setDetail] = useState();
-
 
   useEffect(() => {
     if (detail === undefined) {
@@ -17,17 +15,15 @@ function GalleryDetail({ id, addToFavorites }) {
     }
   }, [])
 
-
-  useEffect(() => {
-    if (detail === undefined) {
-      setDetail(rockyMountainCollegeOfArt)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (detail === undefined) {
+  //     setDetail(rockyMountainCollegeOfArt)
+  //   }
+  // }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-
         {detail &&
         <>
           <article className='styling-container'>
@@ -40,13 +36,13 @@ function GalleryDetail({ id, addToFavorites }) {
             {detail.result.opening_hours &&
             <>
               <h2 className='hours'>Hours</h2>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[0]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[1]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[2]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[3]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[4]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[5]}</p>
-              <p className='day-time'>{detail && detail.result.opening_hours.weekday_text[6]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[0]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[1]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[2]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[3]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[4]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[5]}</p>
+              <p className='day-time'>{detail.result.opening_hours.weekday_text[6]}</p>
             </>}
             </article>
           <article className='styling-container'>

@@ -9,7 +9,6 @@ function LandingPage ({ geoLocation }) {
 
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
-
   // useEffect(() => {
   //   setCity(denverNearbySearch.results[0]);
   // }, [])
@@ -20,7 +19,6 @@ function LandingPage ({ geoLocation }) {
 
   useEffect(() => {
     if (city === undefined) {
-      console.log(geoLocation)
      citySearch(geoLocation.location.lat, geoLocation.location.lng)
      .then(city => setCity(city.results[0]))
     }
@@ -33,7 +31,6 @@ function LandingPage ({ geoLocation }) {
     }
   },[city])
 
-
   return (
     <section className='landing' data-cy="landing">
       <Header />
@@ -44,8 +41,8 @@ function LandingPage ({ geoLocation }) {
         {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
       </article>
       <article className='galleries'>
-        {city && <Link data-cy="to-galleries"className='to-galleries' to={`/city/${city.name}`}>See Galleries</Link>}
-        <Link to='/favorites' className='see-favorites-landing' data-cy='see-favorites-landing'>See Favorites</Link>
+        {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
+        <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
       </article>
     </section>
   )

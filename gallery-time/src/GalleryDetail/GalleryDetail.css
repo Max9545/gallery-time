@@ -65,8 +65,17 @@
   border: none;
 }
 
-
 .see-favorites-detail {
+  background-color: rgba(212, 175, 55);
+  font-weight: bold;
+  margin: 1%;
+  padding: .5% 10% .5% 10%;
+  border-radius: 16px;
+  border: none;
+  text-decoration: none;
+}
+
+/* .see-favorites-detail {
   text-align: center;
   background-color: rgba(212, 175, 55, .75);
   color: black;
@@ -78,8 +87,7 @@
   font-weight: 600;
   border: 2px solid greenyellow;
   margin-top: 1vh;
-}
-
+} */
 
 @media only screen and (max-width: 576px) {
 
