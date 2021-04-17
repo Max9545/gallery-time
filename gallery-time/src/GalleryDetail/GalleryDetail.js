@@ -15,11 +15,11 @@ function GalleryDetail({ id, addToFavorites }) {
     }
   }, [])
 
-  useEffect(() => {
-    if (detail === undefined) {
-      setDetail(rockyMountainCollegeOfArt)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (detail === undefined) {
+  //     setDetail(rockyMountainCollegeOfArt)
+  //   }
+  // }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>

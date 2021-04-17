@@ -12,20 +12,16 @@ self.addEventListener('install', (event) => {
   )
 });
 
-// listen for requests
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
     .then(() => {
       return fetch(event.request)
-      console.log()
-      .catch(() => caches.match('offline.html'))
-
+        .catch(() => caches.match('offline.html'))
     })
   )
 });
 
-// activate the SW
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [];
   cacheWhitelist.push(CACHE_NAME);

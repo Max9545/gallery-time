@@ -9,7 +9,6 @@ function LandingPage ({ geoLocation }) {
 
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
-
   // useEffect(() => {
   //   setCity(denverNearbySearch.results[0]);
   // }, [])
@@ -20,7 +19,6 @@ function LandingPage ({ geoLocation }) {
 
   useEffect(() => {
     if (city === undefined) {
-      console.log(geoLocation)
      citySearch(geoLocation.location.lat, geoLocation.location.lng)
      .then(city => setCity(city.results[0]))
     }
@@ -32,7 +30,6 @@ function LandingPage ({ geoLocation }) {
       .then(data => setPhoto(data))
     }
   },[city])
-
 
   return (
     <section className='landing' data-cy="landing">

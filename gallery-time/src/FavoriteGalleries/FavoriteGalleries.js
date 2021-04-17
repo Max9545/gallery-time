@@ -19,7 +19,6 @@ function FavoriteGalleries ({ favorites }) {
 
   useEffect(() => {
     if(galleries) {
-      console.log(galleries)
       const galleriesList = galleries.map(gallery => {
         return (
           <GalleryCard
