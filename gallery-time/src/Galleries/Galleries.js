@@ -43,6 +43,8 @@ const Galleries = ({ geoLocation }) => {
     }
   }, [galleries])
 
+  // makeGalleriesDisplay
+
 
   return (
     <section className="galleries-page" data-cy="galleries-page">

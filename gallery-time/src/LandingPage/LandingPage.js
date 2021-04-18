@@ -7,11 +7,11 @@ import Header from '../Header/Header.js';
 import OffLine from '../OffLine/OffLine'
 import Loading from '../Loading/Loading.js'
 
-function LandingPage ({ geoLocation }) {
+function LandingPage ({ city, photo }) {
 
-  const [city, setCity] = useState()
-  const [loading, setLoading] = useState()
-  const [display, setDisplay] = useState()
+  // const [city, setCity] = useState()
+  // const [loading, setLoading] = useState()
+  // const [display, setDisplay] = useState()
 
   // useEffect(() => {
   //   setCity(denverNearbySearch.results[0]);
@@ -21,47 +21,59 @@ function LandingPage ({ geoLocation }) {
   //   setPhoto(denverImg);
   // },[city])
 
-  useEffect(() => {
-    setLoading(true)
-    if (city === undefined) {
-     citySearch(geoLocation.location.lat, geoLocation.location.lng)
-     .then(city => setCity(city.results[0]))
-    }
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   if (city === undefined) {
+  //    citySearch(geoLocation.location.lat, geoLocation.location.lng)
+  //    .then(city => setCity(city.results[0]))
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    if (city !== undefined) {
-      photoSearch(city.photos[0].photo_reference)
-      .then(photo => setDisplay(makeCityDisplay(photo, city)))
-    }
-    setLoading(false)
-  },[city])
+  // useEffect(() => {
+  //   if (city !== undefined) {
+  //     photoSearch(city.photos[0].photo_reference)
+  //     .then(photo => setDisplay(makeCityDisplay(photo, city)))
+  //   }
+  // },[city])
 
-  const makeCityDisplay = (currentPhoto, currentCity) => {
+  // const makeCityDisplay = (photo, city) => {
 
-    return (
-      <section className='landing' data-cy="landing">
-        <Header />
-        {/* {!photo && loading && <Loading/>}
-        {!photo && !loading && <OffLine/>} */}
-        <article className='city-container'>
-          <p className='city-name'data-cy="city-name">You are currently in {currentCity.name}, time for culture!</p>
-        </article>
-        <article className='img-container'>
-          <img className='city-img'data-cy="city-img"src={currentPhoto}/>
-        </article>
-        <article className='galleries'>
-          {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${currentCity.name}`}>See Galleries</Link>}
-          <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
-        </article>
-      </section>
-    )
-  }
+  //   return (
+  //     <section className='landing' data-cy="landing">
+  //       <Header />
+  //       <article className='city-container'>
+  //         <p className='city-name'data-cy="city-name">You are currently in {currentCity.name}, time for culture!</p>
+  //       </article>
+  //       <article className='img-container'>
+  //         <img className='city-img'data-cy="city-img"src={currentPhoto}/>
+  //       </article>
+  //       <article className='galleries'>
+  //         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${currentCity.name}`}>See Galleries</Link>}
+  //         <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
+  //       </article>
+  //     </section>
+  //   )
+  // }
 
   return ( 
-    <>
-      {display}
-    </>
+    // <>
+    //   {/* {!display && loading && <Loading/>} */}
+    //   {display}
+    //   {/* {!display && !loading && <OffLine/>} */}
+    // </>
+    <section className='landing' data-cy="landing">
+    <Header />
+    <article className='city-container'>
+      <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>
+    </article>
+    <article className='img-container'>
+      <img className='city-img'data-cy="city-img"src={photo}/>
+    </article>
+    <article className='galleries'>
+      {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
+      <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
+    </article>
+  </section>
   )
 
 }
@@ -69,20 +81,3 @@ function LandingPage ({ geoLocation }) {
 export default LandingPage
 
 
-// <section className='landing' data-cy="landing">
-//       <Header />
-//       {/* {!photo && loading && <Loading/>}
-//       {!photo && !loading && <OffLine/>} */}
-//       <article className='city-container'>
-//         {city && <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>}
-//       </article>
-//       <article className='img-container'>
-//         {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
-        
-//       </article>
-//       <article className='galleries'>
-//         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
-//         <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
-//       </article>
-      
-//     </section>
