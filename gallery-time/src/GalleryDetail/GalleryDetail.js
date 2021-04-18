@@ -5,14 +5,19 @@ import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
+import Loading from '../Loading/Loading';
 
 function GalleryDetail({ id, addToFavorites }) {
+
   const [detail, setDetail] = useState();
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
+    setLoading(true)
     if (detail === undefined) {
       detailsSearch(id)
       .then(data => setDetail(data))
+      .then(() => setLoading(false))
     }
   }, [])
 
@@ -25,7 +30,8 @@ function GalleryDetail({ id, addToFavorites }) {
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-        {!detail && <OffLine />}
+        {!detail && loading && <Loading />}
+        {!detail && !loading && <OffLine />}
         {detail &&
         <>
           <article className='styling-container'>

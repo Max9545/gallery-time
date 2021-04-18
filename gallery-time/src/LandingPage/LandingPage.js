@@ -5,11 +5,13 @@ import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
 import OffLine from '../OffLine/OffLine'
+import Loading from '../Loading/Loading.js'
 
 function LandingPage ({ geoLocation }) {
 
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
+  const [loading, setLoading] = useState()
   // useEffect(() => {
   //   setCity(denverNearbySearch.results[0]);
   // }, [])
@@ -19,6 +21,7 @@ function LandingPage ({ geoLocation }) {
   // },[city])
 
   useEffect(() => {
+    setLoading(true)
     if (city === undefined) {
      citySearch(geoLocation.location.lat, geoLocation.location.lng)
      .then(city => setCity(city.results[0]))
@@ -29,6 +32,7 @@ function LandingPage ({ geoLocation }) {
     if (city !== undefined) {
       photoSearch(city.photos[0].photo_reference)
       .then(data => setPhoto(data))
+      .then(() => setLoading(false))
     }
   },[city])
 
@@ -46,7 +50,8 @@ function LandingPage ({ geoLocation }) {
         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
         <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
       </article>
-      {!photo && <OffLine />}
+      {!photo && loading && <Loading/>}
+      {!photo && !loading && <OffLine/>}
     </section>
   )
 

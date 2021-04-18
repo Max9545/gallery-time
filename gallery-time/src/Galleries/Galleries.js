@@ -4,16 +4,20 @@ import { galleriesSearch } from '../apiCalls.js';
 import { denverGalleries } from '../MockData/MockData.js';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import Header from '../Header/Header.js'
+import Loading from '../Loading/Loading';
 
 const Galleries = ({ geoLocation }) => {
 
   const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState();
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
+    setLoading(true)
     if (galleries === undefined) {
       galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
       .then(data => setGalleries(data))
+      .then(() => setLoading(false))
     }
   }, [])
 
@@ -43,7 +47,8 @@ const Galleries = ({ geoLocation }) => {
   return (
     <section className="galleries-page" data-cy="galleries-page">
       <Header />
-      {galleriesDisplay && galleriesDisplay}
+      {loading && <Loading/>}
+      {!loading && galleriesDisplay && galleriesDisplay}
     </section>
   )
 }
