@@ -17,8 +17,8 @@ function GalleryDetail({ id, addToFavorites }) {
     if (detail === undefined) {
       detailsSearch(id)
       .then(data => setDetail(data))
-      .then(() => setLoading(false))
     }
+    setLoading(false)
   }, [])
 
   // useEffect(() => {
@@ -32,7 +32,7 @@ function GalleryDetail({ id, addToFavorites }) {
       <Header />
         {!detail && loading && <Loading />}
         {!detail && !loading && <OffLine />}
-        {detail &&
+        {detail && !loading &&
         <>
           <article className='styling-container'>
             <h1 className='gallery-name'>{detail.result.name && detail.result.name}</h1>

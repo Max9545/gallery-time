@@ -10,8 +10,9 @@ import Loading from '../Loading/Loading.js'
 function LandingPage ({ geoLocation }) {
 
   const [city, setCity] = useState()
-  const [photo, setPhoto] = useState()
   const [loading, setLoading] = useState()
+  const [display, setDisplay] = useState()
+
   // useEffect(() => {
   //   setCity(denverNearbySearch.results[0]);
   // }, [])
@@ -31,30 +32,57 @@ function LandingPage ({ geoLocation }) {
   useEffect(() => {
     if (city !== undefined) {
       photoSearch(city.photos[0].photo_reference)
-      .then(data => setPhoto(data))
-      .then(() => setLoading(false))
+      .then(photo => setDisplay(makeCityDisplay(photo, city)))
     }
+    setLoading(false)
   },[city])
 
-  return (
-    <section className='landing' data-cy="landing">
-      <Header />
-      <article className='city-container'>
-        {city && <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>}
-      </article>
-      <article className='img-container'>
-        {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
-        
-      </article>
-      <article className='galleries'>
-        {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
-        <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
-      </article>
-      {!photo && loading && <Loading/>}
-      {!photo && !loading && <OffLine/>}
-    </section>
+  const makeCityDisplay = (currentPhoto, currentCity) => {
+
+    return (
+      <section className='landing' data-cy="landing">
+        <Header />
+        {/* {!photo && loading && <Loading/>}
+        {!photo && !loading && <OffLine/>} */}
+        <article className='city-container'>
+          <p className='city-name'data-cy="city-name">You are currently in {currentCity.name}, time for culture!</p>
+        </article>
+        <article className='img-container'>
+          <img className='city-img'data-cy="city-img"src={currentPhoto}/>
+        </article>
+        <article className='galleries'>
+          {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${currentCity.name}`}>See Galleries</Link>}
+          <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
+        </article>
+      </section>
+    )
+  }
+
+  return ( 
+    <>
+      {display}
+    </>
   )
 
 }
 
 export default LandingPage
+
+
+// <section className='landing' data-cy="landing">
+//       <Header />
+//       {/* {!photo && loading && <Loading/>}
+//       {!photo && !loading && <OffLine/>} */}
+//       <article className='city-container'>
+//         {city && <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>}
+//       </article>
+//       <article className='img-container'>
+//         {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
+        
+//       </article>
+//       <article className='galleries'>
+//         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
+//         <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
+//       </article>
+      
+//     </section>

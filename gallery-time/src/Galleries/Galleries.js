@@ -17,8 +17,8 @@ const Galleries = ({ geoLocation }) => {
     if (galleries === undefined) {
       galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
       .then(data => setGalleries(data))
-      .then(() => setLoading(false))
     }
+    setLoading(false)
   }, [])
 
   // useEffect(() => {

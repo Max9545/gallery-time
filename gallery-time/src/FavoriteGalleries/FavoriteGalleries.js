@@ -16,8 +16,8 @@ function FavoriteGalleries ({ favorites }) {
     setLoading(true)
     if (galleries === undefined) {
       setGalleries(favorites)
-      setLoading(false)
     }
+    setLoading(false)
   },[])
 
   useEffect(() => {
