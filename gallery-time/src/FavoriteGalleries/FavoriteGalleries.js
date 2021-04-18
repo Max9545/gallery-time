@@ -44,7 +44,7 @@ function FavoriteGalleries ({ favorites }) {
       {loading && <Loading/>}
       {!loading && galleriesDisplay && galleriesDisplay}
       {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>}
-      <Link to='/'>Start Again</Link>
+      <Link to='/' className='fav-to-home'>Start Again</Link>
     </section>
   )
 }

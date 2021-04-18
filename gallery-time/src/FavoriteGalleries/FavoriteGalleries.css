@@ -37,6 +37,20 @@
   font-size: .8em;
 }
 
+.fav-to-home {
+  text-align: center;
+  background-color: rgba(212, 175, 55);
+  color: black;
+  padding: .5% 10% .5% 10%;
+  text-decoration: none;
+  border-radius: 6px;
+  width: 20vw;
+  margin: 1%;
+  font-weight: 600;
+  align-self: center;
+}
+
+
 @media only screen and (max-width: 576px) {
 
   .favorites-page {
