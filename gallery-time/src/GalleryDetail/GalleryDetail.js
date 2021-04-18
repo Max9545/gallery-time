@@ -4,6 +4,7 @@ import { detailsSearch } from '../apiCalls.js';
 import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
+import OffLine from '../OffLine/OffLine.js'
 
 function GalleryDetail({ id, addToFavorites }) {
   const [detail, setDetail] = useState();
@@ -24,6 +25,7 @@ function GalleryDetail({ id, addToFavorites }) {
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
+        {!detail && <OffLine />}
         {detail &&
         <>
           <article className='styling-container'>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { denverNearbySearch, denverImg}  from '../MockData/MockData.js'
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
+import OffLine from '../OffLine/OffLine'
 
 function LandingPage ({ geoLocation }) {
 
@@ -39,6 +40,7 @@ function LandingPage ({ geoLocation }) {
       </article>
       <article className='img-container'>
         {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
+        {!photo && <OffLine />}
       </article>
       <article className='galleries'>
         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
