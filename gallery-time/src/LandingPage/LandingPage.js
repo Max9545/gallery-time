@@ -40,12 +40,13 @@ function LandingPage ({ geoLocation }) {
       </article>
       <article className='img-container'>
         {photo && <img className='city-img'data-cy="city-img"src={photo}/>}
-        {!photo && <OffLine />}
+        
       </article>
       <article className='galleries'>
         {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
         <Link to='/favorites' className='landing-buttons' data-cy='see-favorites-landing'>See Favorites</Link>
       </article>
+      {!photo && <OffLine />}
     </section>
   )
 
