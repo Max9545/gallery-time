@@ -6,20 +6,20 @@ import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import Header from '../Header/Header.js'
 import Loading from '../Loading/Loading';
 
-const Galleries = ({ geoLocation }) => {
+const Galleries = ({ galleries }) => {
 
-  const [galleries, setGalleries] = useState();
+  // const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState();
   const [loading, setLoading] = useState()
 
-  useEffect(() => {
-    setLoading(true)
-    if (galleries === undefined) {
-      galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
-      .then(data => setGalleries(data))
-    }
-    setLoading(false)
-  }, [])
+  // useEffect(() => {
+  //   setLoading(true)
+  //   if (galleries === undefined) {
+  //     galleriesSearch(geoLocation.location.lat, geoLocation.location.lng)
+  //     .then(data => setGalleries(data))
+  //   }
+  //   setLoading(false)
+  // }, [])
 
   // useEffect(() => {
   //   if (galleries === undefined) {
@@ -41,7 +41,7 @@ const Galleries = ({ geoLocation }) => {
       })
       setGalleriesDisplay(galleriesList);
     }
-  }, [galleries])
+  }, [])
 
   // makeGalleriesDisplay
 
