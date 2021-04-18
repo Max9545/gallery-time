@@ -5,13 +5,14 @@
   height: 8vh;
   width: 100vw;
   text-decoration: none;
+  
 }
 
 .site-name {
   font-size: 2.5em;
   color: black;
   align-self: flex-start;
-  margin: 0;
+  margin: 0 0 0 2vw;
 }
 
 .header-link {
@@ -36,6 +37,13 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 730px) {
+  .site-name {
+    font-size: 1.5em;
+    margin-left: 4vw;
+  }
+}
+
 @media only screen and (max-width: 576px) {
 
   .site-name {
@@ -54,3 +62,4 @@
     width: 80%;
   }
 }
+

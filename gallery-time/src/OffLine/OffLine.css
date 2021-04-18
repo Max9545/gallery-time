@@ -1,6 +1,7 @@
 .offline-container {
   height: 100vh;
-  background: url('../img/the-scream-1893-by-edvard-munch-116046966.jpeg')
+  width:100vw;
+  background:url('../img/the-scream-1893-by-edvard-munch-116046966.jpeg') repeat
 }
 
 .offline-p {
@@ -22,4 +23,13 @@
   padding: 5%;
   font-size: 1.3em;
   font-weight: 700;
+}
+
+
+@media only screen and (min-width: 576px) {
+  .offline-p {
+    height: 3vh;
+    width: 60vw;
+    align-self: center;
+  }
 }
