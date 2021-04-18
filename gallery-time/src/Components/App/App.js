@@ -2,11 +2,11 @@ import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import {Route, Switch} from 'react-router-dom';
 import Galleries from '../Galleries/Galleries.js';
-import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js'
 import { useState, useEffect } from 'react';
-import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch } from '../apiCalls.js';
-import { denverGeoLocation } from '../MockData/MockData.js';
+import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch } from '../../apiCalls.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
+import Loading from '../Loading/Loading';
+import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js'
 require('dotenv').config();
 
 function App() {

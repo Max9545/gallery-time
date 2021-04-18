@@ -8,10 +8,9 @@ import Loading from '../Loading/Loading.js'
 function LandingPage ({ city, photo }) {
 
   return (
-    // {!galleryDetail && loading && <Loading />}
-    // {!galleryDetail && !loading && <OffLine />} 
     <section className='landing' data-cy="landing">
     <Header />
+    {!photo && <OffLine />} 
     <article className='city-container'>
       <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>
     </article>
@@ -24,7 +23,6 @@ function LandingPage ({ city, photo }) {
     </article>
   </section>
   )
-
 }
 
 export default LandingPage

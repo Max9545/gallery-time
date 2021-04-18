@@ -1,38 +1,18 @@
 import './GalleryDetail.css';
-import React, { useEffect, useState } from 'react';
-import { galleryDetailsSearch } from '../apiCalls.js';
-import { rockyMountainCollegeOfArt } from '../MockData/MockData.js';
+import React, { useState } from 'react';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import Loading from '../Loading/Loading';
 
-function GalleryDetail({ id, addToFavorites, galleryDetail }) {
+function GalleryDetail({ addToFavorites, galleryDetail }) {
 
-  // const [galleryDetail, setgalleryDetail] = useState();
-  const [loading, setLoading] = useState()
-
-  // useEffect(() => {
-  //   setLoading(true)
-  //   if (galleryDetail === undefined) {
-  //     galleryDetailsSearch(id)
-  //     .then(data => setgalleryDetail(data))
-  //   }
-  //   setLoading(false)
-  // }, [])
-
-  // useEffect(() => {
-  //   if (galleryDetail === undefined) {
-  //     setgalleryDetail(rockyMountainCollegeOfArt)
-  //   }
-  // }, [])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-        {!galleryDetail && loading && <Loading />}
-        {!galleryDetail && !loading && <OffLine />}
-        {galleryDetail && !loading &&
+        {!galleryDetail && <OffLine />}
+        {galleryDetail &&
         <>
           <article className='styling-container'>
             <h1 className='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
@@ -55,7 +35,6 @@ function GalleryDetail({ id, addToFavorites, galleryDetail }) {
             </article>
           <article className='styling-container'>
             <p className='bottom-card'>{galleryDetail && `Average rating ${galleryDetail.result.rating} from ${galleryDetail.result.user_ratings_total} people.`}</p>
-            {/* <p className='bottom-card'></p> */}
             <a href={galleryDetail.result.url} className='bottom-card'>Link to Google map.</a>
           </article>
           <article className='styling-container'>

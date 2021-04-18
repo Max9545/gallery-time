@@ -10,7 +10,7 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
 
   // const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState([]);
-  const [loading, setLoading] = useState()
+  // const [loading, setLoading] = useState()
 
   // useEffect(() => {
   //   setLoading(true)
@@ -41,8 +41,7 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
     <section className="favorites-page" data-cy="favorites-page">
       <Header/>
       <p className='favorites-header'>Favorite Galleries so far</p>
-      {loading && <Loading/>}
-      {!loading && galleriesDisplay && galleriesDisplay}
+      {galleriesDisplay && galleriesDisplay}
       {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>}
       <Link to='/' className='fav-to-home'>Start Again</Link>
     </section>

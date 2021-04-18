@@ -34,7 +34,7 @@ export const photoSearch = (photoReference) => {
 }
 
 export const galleriesSearch = (latitude, longitude) => {
-  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/nearbysearch/json?location=${latitude},${longitude}&radius=2000&type=art_gallery&key=${key}`, {
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/nearbysearch/json?location=${latitude},${longitude}&radius=3220&type=art_gallery&key=${key}`, {
     method: 'POST',
     headers: {
       "content-type": "application/json",

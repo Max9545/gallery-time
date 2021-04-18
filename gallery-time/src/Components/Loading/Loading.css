@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: url('../img/background-card.jpg');
+  background: url('../../img/background-card.jpg');
   background-size: cover;
   margin: .5%;
   height: 15vh;
