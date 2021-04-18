@@ -7,7 +7,9 @@ import Loading from '../Loading/Loading.js'
 
 function LandingPage ({ city, photo }) {
 
-  return ( 
+  return (
+    // {!galleryDetail && loading && <Loading />}
+    // {!galleryDetail && !loading && <OffLine />} 
     <section className='landing' data-cy="landing">
     <Header />
     <article className='city-container'>

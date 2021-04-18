@@ -18,26 +18,14 @@ function App() {
   const [galleries, setGalleries] = useState();
   const [detailsVisited, setDetailsVisited] = useState([])
 
-  // useEffect(() => {
-  //  if(geoLocation === undefined)
-  //   geoLocatePost()
-  //   .then(data => citySearch(data.location.lat, data.location.lng))
-  //   .then(city => setCity(city))
-  //   // .then(data => setGeoLocation(data))
-  // }, [])
-
-
   useEffect(() => {
     if(city === undefined)
      geoLocatePost()
      .then(data => citySearch(data.location.lat, data.location.lng))
      .then(city => setCity(city))
-     .then(console.log(city))
-     // .then(data => setGeoLocation(data))
    }, [])
 
    useEffect(() => {
-     console.log(city)
     if (city !== undefined) {
       photoSearch(city.results[0].photos[0].photo_reference)
       .then(photo => setPhoto(photo))
@@ -60,9 +48,6 @@ function App() {
       detailsSearch(newDetailID)
       .then(galleryDetail => setDetailsVisited([galleryDetail, ...detailsVisited]))
   }
-  // useEffect(() => {
-  //   setGeoLocation(denverGeoLocation);
-  // }, [])
 
   const findDetails = id => {
     const detailToShow = detailsVisited.find(detailVisited => detailVisited.result.place_id === id)
@@ -72,7 +57,7 @@ function App() {
   return (
       <Switch className='app'>
         {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo}/>}/>}
-        <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} />}/>
+        <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
         <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites}/>}/>
       </Switch>
