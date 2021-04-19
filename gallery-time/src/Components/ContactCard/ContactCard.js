@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactCard.css";
-import aaron from "../aaron.jpg";
+import aaron from "../../img/aaron.jpg";
 
 const ContactCard = () => {
   return (
