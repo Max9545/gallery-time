@@ -4,6 +4,8 @@ import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import Loading from '../Loading/Loading';
+import PropTypes from 'prop-types';
+
 function GalleryDetail({ addToFavorites, galleryDetail }) {
 
   return (
@@ -46,3 +48,10 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
 }
 
 export default GalleryDetail;
+
+GalleryDetail.propTypes = {
+  name: PropTypes.string,
+  rating: PropTypes.string,
+  id: PropTypes.number,
+  addToDetails: PropTypes.func
+};

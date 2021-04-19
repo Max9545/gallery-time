@@ -1,4 +1,3 @@
-import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import {Route, Switch} from 'react-router-dom';
 import Galleries from '../Galleries/Galleries.js';

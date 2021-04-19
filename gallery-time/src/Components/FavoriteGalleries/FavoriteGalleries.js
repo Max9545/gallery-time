@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import Header from '../Header/Header'
+import Header from '../Header/Header';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
-import './FavoriteGalleries.css'
-import { Link } from 'react-router-dom'
+import './FavoriteGalleries.css';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import PropTypes from 'prop-types';
 
 function FavoriteGalleries ({ favorites, addToDetails }) {
 
@@ -46,3 +47,8 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
   )
 }
 export default FavoriteGalleries
+
+FavoriteGalleries.propTypes = {
+  favorites: PropTypes.array,
+  addToDetails: PropTypes.func
+};
