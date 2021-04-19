@@ -89,6 +89,9 @@ visit deployed site [here]()
 ![Site Use](https://media.giphy.com/media/t17g16S5Oc48f7jzt3/giphy.gif)
 
 
+#### Can choose and see favorites
+![Site Use](https://media.giphy.com/media/Vdmty5cR606UHXWbOc/giphy.gif)
+
 ## Future Iterations
 
 1.
