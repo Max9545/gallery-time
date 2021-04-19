@@ -85,15 +85,8 @@ visit deployed site [here]()
 ## Functionality
 
 <!-- add gif -->
-#### Home and Galleries View
+#### App Run Through
 ![Site Use](https://media.giphy.com/media/8e1Qozq9vFxPPa320w/giphy.gif)
-
-#### Detailed View and Favorites
-![]()
-
-#### Offline Run.
-![]()
-
 
 
 ## Future Iterations
