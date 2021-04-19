@@ -10,12 +10,12 @@ function LandingPage ({ city, photo }) {
   return (
     <section className='landing' data-cy="landing">
     <Header />
-    {!photo && <OffLine />} 
+    {!photo && <OffLine />}
     <article className='city-container'>
       <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>
     </article>
     <article className='img-container'>
-      <img className='city-img'data-cy="city-img"src={photo}/>
+      <img className='city-img'data-cy="city-img" alt="The city you are in."src={photo}/>
     </article>
     <article className='galleries'>
       {city && <Link data-cy="to-galleries" className='landing-buttons' to={`/city/${city.name}`}>See Galleries</Link>}
@@ -26,5 +26,3 @@ function LandingPage ({ city, photo }) {
 }
 
 export default LandingPage
-
-

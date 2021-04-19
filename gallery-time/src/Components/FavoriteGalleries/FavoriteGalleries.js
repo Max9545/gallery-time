@@ -7,8 +7,6 @@ import Loading from '../Loading/Loading';
 
 function FavoriteGalleries ({ favorites, addToDetails }) {
 
-
-  // const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState([]);
   // const [loading, setLoading] = useState()
 
