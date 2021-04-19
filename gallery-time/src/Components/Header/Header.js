@@ -12,14 +12,10 @@ function Header () {
           <h1 className='site-name'>Gallery Time</h1>
         </div>
         <div>
-          <p className='git-link'>📧</p>
+          <Link to="/contact" className='git-link' data-cy="contact-button">📧</Link>
         </div>
       </article>
     </section>
   )
 }
 export default Header
-
-//image from https://thenounproject.com/search/?q=art+gallery&i=2381701
-
-//check Copy Rights

@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch } from '../../apiCalls.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
 import Loading from '../Loading/Loading';
-import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js'
+import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js';
+import ContactPage from '../ContactPage/ContactPage.js'
 require('dotenv').config();
 
 function App() {
@@ -51,12 +52,13 @@ function App() {
 
   const findDetails = id => {
     const detailToShow = detailsVisited.find(detailVisited => detailVisited.result.place_id === id)
-    return detailToShow 
-  } 
+    return detailToShow
+  }
 
   return (
       <Switch className='app'>
         {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo}/>}/>}
+        <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
         <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites}/>}/>
