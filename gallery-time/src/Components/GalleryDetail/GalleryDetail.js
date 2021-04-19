@@ -4,9 +4,7 @@ import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import Loading from '../Loading/Loading';
-
 function GalleryDetail({ addToFavorites, galleryDetail }) {
-
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
