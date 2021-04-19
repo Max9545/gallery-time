@@ -13,8 +13,8 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
         {!galleryDetail && <OffLine />}
         {galleryDetail &&
         <>
-          <article className='styling-container'>
-            <h1 className='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
+          <article className='styling-container' data-cy='styling-container'>
+            <h1 className='gallery-name' data-cy='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
             <p className='phone'>{`Phone Number`}</p>
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>
@@ -33,11 +33,12 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             </>}
             </article>
           <article className='styling-container'>
-            <p className='bottom-card'>{galleryDetail && `Average rating ${galleryDetail.result.rating} from ${galleryDetail.result.user_ratings_total} people.`}</p>
+            <p className='bottom-card' data-cy='rating-card'>{galleryDetail && `Average rating ${galleryDetail.result.rating} from ${galleryDetail.result.user_ratings_total} people.`}</p>
             <a href={galleryDetail.result.url} className='bottom-card'>Link to Google map.</a>
           </article>
-          <article className='styling-container'>
-            <button className='add-favorite-button' onClick={() => addToFavorites(galleryDetail.result)}>Favorite This Gallery</button>
+          <article className='styling-container' data-cy='fav-box'>
+            <button className='add-favorite-button'
+            data-cy='fav-button-card' onClick={() => addToFavorites(galleryDetail.result)}>Favorite This Gallery</button>
             <Link to='/favorites' className='see-favorites-galleryDetail' data-cy='see-favorites-galleryDetail'>See Favorites</Link>
           </article>
         </>}

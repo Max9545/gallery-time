@@ -18,11 +18,16 @@ function App() {
   const [detailsVisited, setDetailsVisited] = useState([])
 
   useEffect(() => {
-    if(city === undefined)
-     geoLocatePost()
-     .then(data => citySearch(data.location.lat, data.location.lng))
-     .then(city => setCity(city))
-   }, [])
+    geoLocatePost()
+    .then(data => setGeoLocation({lat: data.location.lat, lng: data.location.lng}))
+  }, [])
+
+  useEffect(() => {
+    if (geoLocation) {
+      citySearch(geoLocation.lat, geoLocation.lng)
+      .then(city => setCity(city))
+    }
+   }, [geoLocation])
 
    useEffect(() => {
     if (city !== undefined) {
@@ -32,10 +37,11 @@ function App() {
   },[city])
 
   useEffect(() => {
-    geoLocatePost()
-    .then(data => galleriesSearch(data.location.lat, data.location.lng))
-    .then(latestGalleries => setGalleries(latestGalleries))
-  }, [city])
+    if (geoLocation) {
+      galleriesSearch(geoLocation.lat, geoLocation.lng)
+      .then(latestGalleries => setGalleries(latestGalleries))
+    }
+  }, [geoLocation])
 
   const addToFavorites = newGalleryID => {
     if(!favorites.includes(newGalleryID)) {
@@ -50,8 +56,8 @@ function App() {
 
   const findDetails = id => {
     const detailToShow = detailsVisited.find(detailVisited => detailVisited.result.place_id === id)
-    return detailToShow
-  }
+    return detailToShow 
+  } 
 
   return (
       <Switch className='app'>

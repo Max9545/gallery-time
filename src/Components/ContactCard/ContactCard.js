@@ -1,12 +1,13 @@
 import React from "react";
 import "./ContactCard.css";
 import aaron from "../../img/aaron.jpg";
+import max from "../../img/max.jpeg";
 
 const ContactCard = () => {
   return (
-    <section className="contact-card">
+    <section className="contact-card" data-cy='contact-card'>
       <article className="profile">
-        <img className="profile-pic" src={aaron} alt=" of M.B." />
+        <img className="profile-pic" src={max} alt=" of M.B." />
         <h3>Max Bregman</h3>
         <a className="pro-card" href="https://www.linkedin.com/in/max-bregman-216063203/">Max-Linkedin</a>
         <a className="pro-card" href="https://github.com/Max9545">Max-GitHub</a>

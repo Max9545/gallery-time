@@ -29,10 +29,11 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
   return (
     <section className="favorites-page" data-cy="favorites-page">
       <Header/>
-      <p className='favorites-header'>Favorite Galleries so far</p>
+      <p className='favorites-header' data-cy='favorites-header'>Favorite Galleries so far</p>
       {galleriesDisplay && galleriesDisplay}
       {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>}
-      <Link to='/' className='fav-to-home'>Start Again</Link>
+      <Link to='/' className='fav-to-home'
+      data-cy='fav-to-home'>Start Again</Link>
     </section>
   )
 }
