@@ -22,7 +22,7 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             {!galleryDetail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
             {galleryDetail.result.opening_hours &&
             <>
-              <h2 className='hours' data-cy='hours'>Hours</h2>
+              <h2 className='hours-title'>Hours</h2>
               <p className='day-time'>{galleryDetail.result.opening_hours.weekday_text[0]}</p>
               <p className='day-time'>{galleryDetail.result.opening_hours.weekday_text[1]}</p>
               <p className='day-time'>{galleryDetail.result.opening_hours.weekday_text[2]}</p>
