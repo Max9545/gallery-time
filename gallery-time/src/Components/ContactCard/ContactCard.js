@@ -4,7 +4,7 @@ import aaron from "../../img/aaron.jpg";
 
 const ContactCard = () => {
   return (
-    <section className="contact-card">
+    <section className="contact-card" data-cy='contact-card'>
       <article className="profile">
         <img className="profile-pic" src={aaron} alt=" of M.B." />
         <h3>Max Bregman</h3>
