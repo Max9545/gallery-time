@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Galleries.css';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import Header from '../Header/Header.js';
@@ -31,6 +31,6 @@ const Galleries = ({ galleries, addToDetails }) => {
 export default Galleries
 
 Galleries.propTypes = {
-  galleries: PropTypes.array,
+  galleries: PropTypes.object,
   addToDetails: PropTypes.func
 };

@@ -16,7 +16,7 @@ export default GalleryCard;
 
 GalleryCard.propTypes = {
   name: PropTypes.string,
-  rating: PropTypes.string,
-  id: PropTypes.number,
+  rating: PropTypes.number,
+  id: PropTypes.string,
   addToDetails: PropTypes.func
 };

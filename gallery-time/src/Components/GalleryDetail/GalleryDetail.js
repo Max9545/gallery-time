@@ -1,9 +1,8 @@
 import './GalleryDetail.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
-import Loading from '../Loading/Loading';
 import PropTypes from 'prop-types';
 
 function GalleryDetail({ addToFavorites, galleryDetail }) {
@@ -41,8 +40,7 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             <button className='add-favorite-button' onClick={() => addToFavorites(galleryDetail.result)}>Favorite This Gallery</button>
             <Link to='/favorites' className='see-favorites-galleryDetail' data-cy='see-favorites-galleryDetail'>See Favorites</Link>
           </article>
-          </>}
-
+        </>}
     </section>
   )
 }
@@ -51,7 +49,7 @@ export default GalleryDetail;
 
 GalleryDetail.propTypes = {
   name: PropTypes.string,
-  rating: PropTypes.string,
-  id: PropTypes.number,
+  rating: PropTypes.number,
+  id: PropTypes.string,
   addToDetails: PropTypes.func
 };

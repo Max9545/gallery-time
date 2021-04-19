@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
 import React from 'react';
 import OffLine from '../OffLine/OffLine';
-import Loading from '../Loading/Loading.js';
 import PropTypes from 'prop-types';
 
 function LandingPage ({ city, photo }) {

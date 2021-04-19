@@ -4,9 +4,8 @@ import Galleries from '../Galleries/Galleries.js';
 import { useState, useEffect } from 'react';
 import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch } from '../../apiCalls.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
-import Loading from '../Loading/Loading';
 import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js';
-import ContactPage from '../ContactPage/ContactPage.js'
+import ContactPage from '../ContactPage/ContactPage.js';
 require('dotenv').config();
 
 function App() {

@@ -3,21 +3,11 @@ import Header from '../Header/Header';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
 import './FavoriteGalleries.css';
 import { Link } from 'react-router-dom';
-import Loading from '../Loading/Loading';
 import PropTypes from 'prop-types';
 
 function FavoriteGalleries ({ favorites, addToDetails }) {
 
   const [galleriesDisplay, setGalleriesDisplay] = useState([]);
-  // const [loading, setLoading] = useState()
-
-  // useEffect(() => {
-  //   setLoading(true)
-  //   if (galleries === undefined) {
-  //     setGalleries(favorites)
-  //   }
-  //   setLoading(false)
-  // },[])
 
   useEffect(() => {
     if(favorites) {
