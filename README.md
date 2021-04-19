@@ -94,7 +94,7 @@ visit deployed site [here]()
 
 
 #### Can show contact info and Google Maps link
-![Site Use](https://media.giphy.com/media/jXRQHnmXOvYoQbPQHa/giphy.gif)
+![Site Use](https://media.giphy.com/media/I1dkNGUzMxbmS8fi5x/giphy.gif)
 
 ## Future Iterations
 
