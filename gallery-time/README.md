@@ -1,70 +1,112 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contact  
 
-## Available Scripts
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://github.com/Afoucheaux) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://www.linkedin.com/in/aaron-foucheaux-891626207/) - Aaron Foucheaux
 
-In the project directory, you can run:
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/max-bregman-216063203/) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://github.com/Max9545) - Max Bregman
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
+- [Set-up Instructions](#set-up-instructions)
+- [Learning Goals](#learning-goals)
+- [Challenges](#challenges)
+- [Wins](#wins)
+- [Functionality](#functionality)
+- [Future Iterations](#future-iterations)
+- [Contributors](#contributors)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About The Project
 
-### `npm run build`
+This project utilizes Create React App to build an application which allows users to view a list galleries based on their geo-location, see details on individual gallery and save then to favorites. Throughout the project, learning goals included:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Architect an application structure using functional components and hooks
+- Gain competency with React fundamentals
+- Continue working with React components & asynchronous JS using Cypress testing
+- Create a multi-page UX using Router
+- Use the stretch technology of PWA to implement a React app to have native like behavior of running offline.
+- Use Google JS api and larger databases.
+- Deployment using
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Deployed app]()
+- [Project Brief and Rubric](https://frontend.turing.io/projects/module-3/stretch.html)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### Built With:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React
+- React Router
+- Javascript
+- HTML5
+- CSS
+- Cypress
+- PWA technology
+- Googled-places api
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Set-up Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+visit deployed site [here]()
 
-## Learn More
+1. Additionally you can clone down the repo [here](https://github.com/Max9545/gallery-time)
+2. Move into the gallery-time directory in your terminal.
+3. To see the code itself locally, run `<name of text editor> .`
+- Run `npm install`
+- Run `npm start`
+- visit http://localhost:3000/
+- will need a google api key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Learning Goals
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Deeper understanding of React fundamentals including components, props, state, JSX, hooks.
+- E2E (end to end) testing using Cypress
+- Refactoring an application to utilize React Router
+- Deploying an application
+- Utilize PWA to run application offline.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Challenges
 
-### Analyzing the Bundle Size
+1. Planning: intentionally planning an overall strategy before writing code. This included component structures and state if applicable
+2. Using Cypress testing, to implement E2E testing and throughly test all user flows including stubbing api calls
+3. Using the Google Api with CORS and keys.
+4. Implement PWA features. Service worker and cache.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Wins
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Implementing the MVP.
+2. Getting PWA to run application offline.
+3. Mobile first design.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Functionality
 
-### Deployment
+<!-- add gif -->
+#### Home and Galleries View
+![Title](link)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Detailed View and Favorites
+![]()
 
-### `npm run build` fails to minify
+#### Offline Run.
+![]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Future Iterations
+
+1.
+2.
+3.
+
+
+## Contributers
+
+* [Aaron Foucheaux](https://github.com/alexthompson207) - Application Co-creator
+* [Max Bregman](https://github.com/Max9545) - Application Co-creator
+* [Leta](https://github.com/letakeane) - Project Manager
+* [Scott Ertmer](https://github.com/sertmer) - Project Manager
