@@ -84,7 +84,7 @@ visit deployed site [here]()
 
 ## Functionality
 
-<!-- add gif -->
+
 #### Landing Page , Galleries Page, and Details Page
 ![Site Use](https://media.giphy.com/media/t17g16S5Oc48f7jzt3/giphy.gif)
 
@@ -95,12 +95,6 @@ visit deployed site [here]()
 
 #### Can show contact info and Google Maps link
 ![Site Use](https://media.giphy.com/media/I1dkNGUzMxbmS8fi5x/giphy.gif)
-
-## Future Iterations
-
-1.
-2.
-3.
 
 
 ## Contributers
