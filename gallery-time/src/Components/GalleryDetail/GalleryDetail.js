@@ -13,8 +13,8 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
         {!galleryDetail && <OffLine />}
         {galleryDetail &&
         <>
-          <article className='styling-container'>
-            <h1 className='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
+          <article className='styling-container' data-cy='styling-container'>
+            <h1 className='gallery-name' data-cy='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
             <p className='phone'>{`Phone Number`}</p>
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>

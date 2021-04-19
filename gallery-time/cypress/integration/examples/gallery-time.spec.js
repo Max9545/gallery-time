@@ -20,13 +20,13 @@ context('Gallery Time', () => {
     .get("[data-cy=gallery-card]").should("exist")
   })
 
-  it('Should be able to link from the galleries to a GalleryDetail page', () => {
+  it.only('Should be able to link from the galleries to a GalleryDetail page', () => {
     cy.get("[data-cy=to-galleries]").click()
     .get("[data-cy=gallery-card]").first().click()
     .get("[data-cy=detail-gallery]").should("exist")
     .get("[data-cy=header-box]").should("exist")
-    .get("[data-cy=top-card]").should("exist")
-    .get("[data-cy=name]").should("contain", "Rocky Mountain College of Art + Design")
+    .get("[data-cy=styling-container]").should("exist")
+    .get("[data-cy=gallery-name]").should("contain", "Rocky Mountain College of Art + Design")
     .get("[data-cy=hours-card]").should("exist").and("contain", "Hours")
     .get("[data-cy=rating-card]").should("exist").and("contain", "Link to Google map")
     .get("[data-cy=button-card]").should("exist").and("contain", "Favorite")

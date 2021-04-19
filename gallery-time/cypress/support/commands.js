@@ -35,7 +35,7 @@ Cypress.Commands.add('citySearchAPICall', () => {
 // })
 
 Cypress.Commands.add('galleriesSearchAPICall', () => {
-  cy.intercept(`https://pure-hollows-05817.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.7115392,$-105.05420799999999&radius=2000&type=art_gallery&key=${Cypress.env('API_KEY')}`, {
+  cy.intercept(`https://pure-hollows-05817.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.7115392,-105.05420799999999&radius=3220&type=art_gallery&key=${Cypress.env('API_KEY')}`, {
       method: 'POST',
       headers: {
         "content-type": "application/json"
