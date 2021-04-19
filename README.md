@@ -85,8 +85,8 @@ visit deployed site [here]()
 ## Functionality
 
 <!-- add gif -->
-#### App Run Through
-![Site Use](https://media.giphy.com/media/8e1Qozq9vFxPPa320w/giphy.gif)
+#### Landing Page , Galleries Page, and Details Page
+![Site Use](https://media.giphy.com/media/t17g16S5Oc48f7jzt3/giphy.gif)
 
 
 ## Future Iterations
