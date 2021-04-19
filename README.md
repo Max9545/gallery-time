@@ -92,6 +92,10 @@ visit deployed site [here]()
 #### Can choose and see favorites
 ![Site Use](https://media.giphy.com/media/Vdmty5cR606UHXWbOc/giphy.gif)
 
+
+#### Can show contact info and Google Maps link
+![Site Use](https://media.giphy.com/media/jXRQHnmXOvYoQbPQHa/giphy.gif)
+
 ## Future Iterations
 
 1.
