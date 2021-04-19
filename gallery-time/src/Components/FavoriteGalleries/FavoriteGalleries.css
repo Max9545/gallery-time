@@ -20,7 +20,6 @@
   font-weight: 600;
   font-style: oblique;
   font-size: 1.1em;
-  /* margin-bottom: 0; */
   text-align: center;
   width: 75vw;
   align-self: center;
@@ -50,10 +49,10 @@
   align-self: center;
 }
 
-
 @media only screen and (max-width: 576px) {
 
   .favorites-page {
     background-size: contain;
   }
+  
 }

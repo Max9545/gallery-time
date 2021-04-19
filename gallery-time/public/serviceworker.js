@@ -1,5 +1,6 @@
 const cacheName = 'version-1';
 const self = this;
+
 self.addEventListener('install', (event) => {
   console.log('Service Worker: Installed');
 });
@@ -35,4 +36,3 @@ self.addEventListener('fetch', (event) => {
       }).catch(err => caches.match(event.request).then(res => res))
   );
 });
-

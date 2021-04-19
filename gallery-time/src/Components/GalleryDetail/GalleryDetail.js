@@ -1,12 +1,11 @@
 import './GalleryDetail.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
-import Loading from '../Loading/Loading';
+import PropTypes from 'prop-types';
 
 function GalleryDetail({ addToFavorites, galleryDetail }) {
-
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
@@ -19,7 +18,7 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             <p className='phone'>{`Phone Number`}</p>
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>
-          <article className='styling-container'>
+          <article className='styling-container hours'>
             {!galleryDetail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
             {galleryDetail.result.opening_hours &&
             <>
@@ -41,10 +40,16 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             <button className='add-favorite-button' onClick={() => addToFavorites(galleryDetail.result)}>Favorite This Gallery</button>
             <Link to='/favorites' className='see-favorites-galleryDetail' data-cy='see-favorites-galleryDetail'>See Favorites</Link>
           </article>
-          </>}
-
+        </>}
     </section>
   )
 }
 
 export default GalleryDetail;
+
+GalleryDetail.propTypes = {
+  name: PropTypes.string,
+  rating: PropTypes.number,
+  id: PropTypes.string,
+  addToDetails: PropTypes.func
+};

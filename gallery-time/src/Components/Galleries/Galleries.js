@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Galleries.css';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
-import Header from '../Header/Header.js'
-import OffLine from '../OffLine/OffLine'
-
+import Header from '../Header/Header.js';
+import OffLine from '../OffLine/OffLine';
+import PropTypes from 'prop-types';
 
 const Galleries = ({ galleries, addToDetails }) => {
 
@@ -14,13 +14,12 @@ const Galleries = ({ galleries, addToDetails }) => {
         id={gallery.place_id}
         name={gallery.name}
         rating={gallery.rating}
-        addToDetails={addToDetails} 
+        addToDetails={addToDetails}
       />
     )
   })
 
   return (
-
     <section className="galleries-page" data-cy="galleries-page">
       <Header />
       {!galleries && <OffLine />}
@@ -30,3 +29,8 @@ const Galleries = ({ galleries, addToDetails }) => {
 }
 
 export default Galleries
+
+Galleries.propTypes = {
+  galleries: PropTypes.object,
+  addToDetails: PropTypes.func
+};

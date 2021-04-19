@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './GalleryCard.css';
+import PropTypes from 'prop-types';
 
 function GalleryCard({ name, rating, id, addToDetails }) {
   return(
@@ -12,3 +13,10 @@ function GalleryCard({ name, rating, id, addToDetails }) {
 }
 
 export default GalleryCard;
+
+GalleryCard.propTypes = {
+  name: PropTypes.string,
+  rating: PropTypes.number,
+  id: PropTypes.string,
+  addToDetails: PropTypes.func
+};

@@ -1,24 +1,13 @@
 import { useEffect, useState } from 'react';
-import Header from '../Header/Header'
+import Header from '../Header/Header';
 import  GalleryCard from '../GalleryCard/GalleryCard.js';
-import './FavoriteGalleries.css'
-import { Link } from 'react-router-dom'
-import Loading from '../Loading/Loading';
+import './FavoriteGalleries.css';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function FavoriteGalleries ({ favorites, addToDetails }) {
 
-
-  // const [galleries, setGalleries] = useState();
   const [galleriesDisplay, setGalleriesDisplay] = useState([]);
-  // const [loading, setLoading] = useState()
-
-  // useEffect(() => {
-  //   setLoading(true)
-  //   if (galleries === undefined) {
-  //     setGalleries(favorites)
-  //   }
-  //   setLoading(false)
-  // },[])
 
   useEffect(() => {
     if(favorites) {
@@ -48,3 +37,8 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
   )
 }
 export default FavoriteGalleries
+
+FavoriteGalleries.propTypes = {
+  favorites: PropTypes.array,
+  addToDetails: PropTypes.func
+};
