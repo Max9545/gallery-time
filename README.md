@@ -86,7 +86,7 @@ visit deployed site [here]()
 
 <!-- add gif -->
 #### Home and Galleries View
-![Title](link)
+![Site Use](https://media.giphy.com/media/8e1Qozq9vFxPPa320w/giphy.gif)
 
 #### Detailed View and Favorites
 ![]()
