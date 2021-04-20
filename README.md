@@ -30,7 +30,7 @@ This project utilizes Create React App to build an application which allows user
 - Use Google JS api and larger databases.
 - Deployment using
 
-- [Deployed app]()
+- [Deployed app](https://gallery-time.herokuapp.com/)
 - [Project Brief and Rubric](https://frontend.turing.io/projects/module-3/stretch.html)
 
 
