@@ -7,9 +7,22 @@ import PropTypes from 'prop-types';
 
 function FavoriteGalleries ({ favorites, addToDetails, removeFromFavorites }) {
 
-  const [galleriesDisplay, setGalleriesDisplay] = useState([]);
-
-  useEffect(() => {
+  // const [galleriesDisplay, setGalleriesDisplay] = useState([]);
+  const favoritesDisplay = favorites.map(gallery => {
+    return (
+      <>
+        <GalleryCard
+          key={gallery.place_id}
+          id={gallery.place_id}
+          name={gallery.name}
+          rating={gallery.rating}
+          addToDetails={addToDetails}
+        />
+        <button onClick={() => removeFromFavorites(gallery.place_id)}>Remove</button> 
+        </>
+        )
+      })
+  {/* useEffect(() => {
     if(favorites) {
       const galleriesList = favorites.map(gallery => {
         return (
@@ -27,14 +40,15 @@ function FavoriteGalleries ({ favorites, addToDetails, removeFromFavorites }) {
       })
       setGalleriesDisplay(galleriesList)
     }
-  }, [])
+  }, []) */}
 
   return (
     <section className="favorites-page" data-cy="favorites-page">
       <Header/>
       <p className='favorites-header' data-cy='favorites-header'>Favorite Galleries so far</p>
-      {galleriesDisplay && galleriesDisplay}
-      {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>}
+      {/* {galleriesDisplay && galleriesDisplay} */}
+      {favoritesDisplay && favoritesDisplay}
+      {/* {!galleriesDisplay.length && <p className='no-favorites'>You have no favorites yet, checkout your beautiful city!</p>} */}
       <Link to='/' className='fav-to-home'
       data-cy='fav-to-home'>Start Again</Link>
     </section>

@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     geoLocatePost()
-    .then(data => console.log(data))
     .then(data => setGeoLocation({lat: data.location.lat, lng: data.location.lng}))
   }, [])
 
