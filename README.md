@@ -57,6 +57,14 @@ visit deployed site [here]()
 - Run `npm start`
 - visit http://localhost:3000/
 - will need a google api key
+- make .env file in root directory and paste this in there:
+- REACT_APP_API_KEY=Your_KEY_HERE
+- Torun Cypress testing add cypress.json needs this:
+{
+  "env": {
+    "API_KEY": "process.env.REACT_APP_API_KEY"
+  }
+}
 
 ## Learning Goals
 
