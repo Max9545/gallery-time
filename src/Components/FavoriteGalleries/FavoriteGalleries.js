@@ -5,7 +5,7 @@ import './FavoriteGalleries.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function FavoriteGalleries ({ favorites, addToDetails }) {
+function FavoriteGalleries ({ favorites, addToDetails, removeFromFavorites }) {
 
   const [galleriesDisplay, setGalleriesDisplay] = useState([]);
 
@@ -13,13 +13,16 @@ function FavoriteGalleries ({ favorites, addToDetails }) {
     if(favorites) {
       const galleriesList = favorites.map(gallery => {
         return (
-          <GalleryCard
-            key={gallery.place_id}
-            id={gallery.place_id}
-            name={gallery.name}
-            rating={gallery.rating}
-            addToDetails={addToDetails}
-          />
+          <>
+            <GalleryCard
+              key={gallery.place_id}
+              id={gallery.place_id}
+              name={gallery.name}
+              rating={gallery.rating}
+              addToDetails={addToDetails}
+            />
+            <button onClick={() => removeFromFavorites(gallery.place_id)}>Remove</button>
+          </>
         )
       })
       setGalleriesDisplay(galleriesList)
