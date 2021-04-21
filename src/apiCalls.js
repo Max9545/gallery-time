@@ -23,7 +23,7 @@ export const citySearch = (latitude, longitude) => {
 }
 
 export const photoSearch = (photoReference) => {
-  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/photo?maxwidth=337&photoreference=${photoReference}&key=${key}`,{
+  return fetch(`https://pure-hollows-05817.herokuapp.com/${mapsUrl}/place/photo?maxwidth=1600&photoreference=${photoReference}&key=${key}`,{
     method: 'POST',
     headers: {
       "content-type": "image/jpeg",

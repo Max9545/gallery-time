@@ -49,6 +49,10 @@ function App() {
     }
   }
 
+  const removeFromFavorites = idToRemove => {
+    setFavorites(favorites.filter(favorite => favorite.place_id !== idToRemove))
+  }
+
   const addToDetails = newDetailID => {
       detailsSearch(newDetailID)
       .then(galleryDetail => setDetailsVisited([galleryDetail, ...detailsVisited]))
@@ -63,9 +67,9 @@ function App() {
       <Switch className='app'>
         {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo}/>}/>}
         <Route exact path="/contact" component={ ContactPage }/>
-        <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails}/>}/>
+        <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
-        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites}/>}/>
+        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>
       </Switch>
   );
 }

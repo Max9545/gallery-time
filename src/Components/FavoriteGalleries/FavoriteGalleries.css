@@ -49,6 +49,18 @@
   align-self: center;
 }
 
+button {
+  background-color: rgba(212, 175, 55);
+  padding: 2%;
+  border-radius: 3px;
+  font-weight: 600;
+  text-align: center;
+  width: 35vw;
+  border-radius: 6px;
+  align-self: center;
+  font-size: .8em;
+}
+
 @media only screen and (max-width: 576px) {
 
   .favorites-page {
@@ -56,3 +68,4 @@
   }
   
 }
+
