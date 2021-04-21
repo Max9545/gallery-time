@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import PropTypes from 'prop-types';
 
-function GalleryDetail({ addToFavorites, galleryDetail }) {
+function GalleryDetail({ addToFavorites, galleryDetail, city }) {
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
@@ -18,6 +18,7 @@ function GalleryDetail({ addToFavorites, galleryDetail }) {
             <p className='phone'>{`Phone Number`}</p>
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>
+          <Link className='detail-to-galleries' to={`/city/${city}`}>Back To Galleries</Link>
           <article className='styling-container hours'>
             {!galleryDetail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
             {galleryDetail.result.opening_hours &&

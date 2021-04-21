@@ -70,7 +70,7 @@
   border: none;
 }
 
-.see-favorites-detail {
+.see-favorites-galleryDetail {
   background-color: rgba(212, 175, 55);
   font-weight: bold;
   margin: 1%;
@@ -78,6 +78,17 @@
   border-radius: 16px;
   border: none;
   text-decoration: none;
+}
+
+.detail-to-galleries {
+  background-color: rgba(212, 175, 55);
+  font-weight: bold;
+  padding: 3% 1% 0 1%;
+  border-radius: 16px;
+  border: none;
+  text-decoration: none;
+  justify-content: center;
+  color: black;
 }
 
 @media only screen and (max-width: 576px) {
