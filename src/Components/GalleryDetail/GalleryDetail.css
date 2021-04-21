@@ -83,7 +83,9 @@
 .detail-to-galleries {
   background-color: rgba(212, 175, 55);
   font-weight: bold;
-  padding: 3% 1% 0 1%;
+  padding: 0 2vw 0 2vw;
+  display: flex;
+  align-items: center;
   border-radius: 16px;
   border: none;
   text-decoration: none;
