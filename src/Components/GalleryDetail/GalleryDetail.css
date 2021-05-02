@@ -25,6 +25,11 @@
   text-align: center;
 }
 
+.gallery-photo {
+  width:20vw;
+  /* height: 20vh; */
+}
+
 .hours {
   height: 40vh;
 }
