@@ -15,7 +15,7 @@
 
 .city-img {
   margin: 0;
-  height: 77vh;
+  height: 75vh;
   width: 90vw;
   object-fit: cover;
 }
@@ -49,6 +49,28 @@
   text-align: center;
 }
 
+.city-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1%; 
+  font-weight: bolder;
+}
+
+.city-submit {
+  background-color: rgba(212, 175, 55, .75);
+  border-radius: 6px;
+  border: none;
+  padding: .7% 2% .7% 2%;
+  font-weight:bold;
+}
+
+.city-select {
+  border-radius: 6px;
+  border: none;
+  padding: 1%;
+}
+
 @media only screen and (max-width: 576px) {
 
   .city-container {
@@ -71,7 +93,7 @@
   }
 
   .city-img {
-    height: 76vh;
+    height: 74vh;
   }
 
 }

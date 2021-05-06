@@ -23,12 +23,12 @@ function LandingPage ({ city, photo, setUserCity }) {
     <Header />
     {!photo && <OffLine />}
     <article className='city-container'>
-      <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>
+      <p className='city-name'data-cy="city-name">You are looking at galleries in {city.name}, time for culture!</p>
     </article>
-    <form>
-      Select Your Own City
-      <input type='text' value={cityToSelect} onChange={e => handleChange(e)} name='city-select' data-cy='city-select'/>
-      <input type='submit' value='Change City'  onClick={e => handleSubmit(e)}/>
+    <form className='city-search-form' data-cy='city-search-form'>
+      Select City
+      <input className='city-select' type='text' value={cityToSelect} onChange={e => handleChange(e)} data-cy='city-select'/>
+      <input type='submit' value='Change City' className='city-submit' data-cy='city-submit' onClick={e => handleSubmit(e)}/>
     </form>
     <article className='img-container'>
       <img className='city-img'data-cy="city-img" alt="The city you are in."src={photo}/>

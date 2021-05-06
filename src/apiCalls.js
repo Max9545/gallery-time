@@ -57,5 +57,5 @@ export const detailsSearch = (placeId) => {
 
 export const selectLocation = (city) => {
   return fetch(`http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=${city}`)
-  .then(res => res.json())
+  .then((res) => res.json())
 }

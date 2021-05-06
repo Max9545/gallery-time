@@ -60,10 +60,12 @@ function App() {
   }
 
   const setUserCity = userCity => {
-    console.log(userCity)
     selectLocation(userCity)
-    // .then(data => console.log(data))
-    .then(data => setGeoLocation({ lat: data.data[0].latitude, lng: data.data[0].longitude }))
+    .then(data => {
+      if(data.data.length !== 0) {
+        setGeoLocation({ lat: data.data[0].latitude, lng: data.data[0].longitude })
+      }
+    })
   }
 
   return (
