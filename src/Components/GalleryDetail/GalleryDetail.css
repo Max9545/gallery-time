@@ -27,7 +27,8 @@
 
 .gallery-photo {
   width:20vw;
-  /* height: 20vh; */
+  height: 20vh;
+  object-fit: cover;
 }
 
 .hours {

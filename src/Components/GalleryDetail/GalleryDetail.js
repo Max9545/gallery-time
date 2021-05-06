@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import PropTypes from 'prop-types';
 import { photoSearch } from '../../apiCalls';
+import defaultImage from '../../img/abstract_painting.jpeg'
 
 function GalleryDetail({ addToFavorites, galleryDetail, city }) {
 
@@ -13,9 +14,12 @@ function GalleryDetail({ addToFavorites, galleryDetail, city }) {
   const [galleryPhoto, setGalleryPhoto] = useState()
 
   useEffect(() => {
-    console.log(galleryDetail)
-    photoSearch(galleryDetail.result.photos[0].photo_reference)
-    .then(data => setGalleryPhoto(data))
+    if (galleryDetail.result.photos !== undefined) {
+      photoSearch(galleryDetail.result.photos[0].photo_reference)
+      .then(data => setGalleryPhoto(data))
+    } else {
+      setGalleryPhoto(defaultImage)
+    }
   }, [galleryDetail])
 
   return (
