@@ -1,11 +1,22 @@
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
-import React from 'react';
+import React, { useState } from 'react';
 import OffLine from '../OffLine/OffLine';
 import PropTypes from 'prop-types';
 
-function LandingPage ({ city, photo }) {
+function LandingPage ({ city, photo, setUserCity }) {
+
+  const [cityToSelect, setCityToSelect] = useState() 
+
+  const handleChange = event => {
+    setCityToSelect(event.target.value)
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    setUserCity(cityToSelect)
+  }
 
   return (
     <section className='landing' data-cy="landing">
@@ -14,6 +25,11 @@ function LandingPage ({ city, photo }) {
     <article className='city-container'>
       <p className='city-name'data-cy="city-name">You are currently in {city.name}, time for culture!</p>
     </article>
+    <form>
+      Select Your Own City
+      <input type='text' value={cityToSelect} onChange={e => handleChange(e)} name='city-select' data-cy='city-select'/>
+      <input type='submit' value='Change City'  onClick={e => handleSubmit(e)}/>
+    </form>
     <article className='img-container'>
       <img className='city-img'data-cy="city-img" alt="The city you are in."src={photo}/>
     </article>

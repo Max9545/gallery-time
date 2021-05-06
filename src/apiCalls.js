@@ -2,6 +2,7 @@ const geoLocateUrl = 'https://www.googleapis.com/geolocation/v1/geolocate?key='
 const key = process.env.REACT_APP_API_KEY
 
 const mapsUrl = 'https://maps.googleapis.com/maps/api/'
+
 export const geoLocatePost = () => {
   return fetch(`${geoLocateUrl}${key}`, {
     method: 'POST',
@@ -52,4 +53,9 @@ export const detailsSearch = (placeId) => {
   })
   .then(res => res.json())
 
+}
+
+export const selectLocation = (city) => {
+  return fetch(`http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=${city}`)
+  .then(res => res.json())
 }
