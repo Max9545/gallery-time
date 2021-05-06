@@ -1,6 +1,6 @@
 .detail-gallery {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -54,6 +54,11 @@
   width: 30vw;
 }
 
+.add-favorite-button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 35px rgba(212, 175, 55, .75);
+}
+
 .hours-title {
   font-weight: bold;
   font-size: 1.5em;
@@ -69,6 +74,8 @@
   font-size: 1em;
   margin: .5%;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 .add-favorite-button {
@@ -88,6 +95,7 @@
   border-radius: 16px;
   border: none;
   text-decoration: none;
+  color: black;
 }
 
 .detail-to-galleries {
