@@ -15,7 +15,6 @@ function App() {
   const [city, setCity] = useState()
   const [photo, setPhoto] = useState()
   const [galleries, setGalleries] = useState();
-  const [currentGallery, setCurrentGallery] = useState()
   const [detailsVisited, setDetailsVisited] = useState([])
 
   useEffect(() => {
