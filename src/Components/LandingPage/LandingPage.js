@@ -1,14 +1,18 @@
 import './LandingPage.css';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import OffLine from '../OffLine/OffLine';
 import PropTypes from 'prop-types';
 
-function LandingPage ({ city, photo, setUserCity }) {
+function LandingPage ({ city, photo, setUserCity, citySearchError }) {
 
   const [cityToSelect, setCityToSelect] = useState() 
-  const [error, setError] = useState('')
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    setError(citySearchError)
+  },[citySearchError])
 
   const handleChange = event => {
     setCityToSelect(event.target.value)
@@ -25,7 +29,8 @@ function LandingPage ({ city, photo, setUserCity }) {
     <Header />
     {!photo && <OffLine />}
     <article className='city-container'>
-      <p className='city-name'data-cy="city-name">You are looking at galleries in {city.name}, time for culture!</p>
+     {error && <p className='city-name'data-cy="city-name">Could not find that city, still looking at galleries in {city.name}</p>}
+     {!error && <p className='city-name'data-cy="city-name">You are looking at galleries in {city.name}, time for culture!</p>}
     </article>
     <form className='city-search-form' data-cy='city-search-form'>
       Select City
