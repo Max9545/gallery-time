@@ -37,6 +37,7 @@ function LandingPage ({ city, photo, setUserCity, citySearchError }) {
       <input className='city-select' type='text' value={cityToSelect} onChange={e => handleChange(e)} data-cy='city-select'/>
       <input type='submit' value='Change City' className='city-submit' data-cy='city-submit' onClick={e => handleSubmit(e)}/>
     </form>
+    {!city.name && <p>Loading...</p>}
     <article className='img-container'>
       <img className='city-img'data-cy="city-img" alt="The city you are in."src={photo}/>
     </article>
