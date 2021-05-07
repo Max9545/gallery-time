@@ -63,6 +63,8 @@ function App() {
     .then(data => {
       if(data.data.length !== 0) {
         setGeoLocation({ lat: data.data[0].latitude, lng: data.data[0].longitude })
+      } else if (data.data.length === 0) {
+        
       }
     })
   }

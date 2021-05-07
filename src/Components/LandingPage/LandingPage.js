@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 function LandingPage ({ city, photo, setUserCity }) {
 
   const [cityToSelect, setCityToSelect] = useState() 
+  const [error, setError] = useState('')
 
   const handleChange = event => {
     setCityToSelect(event.target.value)
@@ -16,6 +17,7 @@ function LandingPage ({ city, photo, setUserCity }) {
   const handleSubmit = event => {
     event.preventDefault()
     setUserCity(cityToSelect)
+    setCityToSelect('')
   }
 
   return (
