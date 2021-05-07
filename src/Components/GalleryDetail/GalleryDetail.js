@@ -37,7 +37,7 @@ function GalleryDetail({ addToFavorites, galleryDetail, city }) {
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>
           <Link className='detail-to-galleries' to={`/city/${city}`}>Back To Galleries</Link>
-          <article className='styling-container hours'>
+          <article className='styling-container hours' data-cy='hours'>
             {!galleryDetail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
             {galleryDetail.result.opening_hours &&
             <>

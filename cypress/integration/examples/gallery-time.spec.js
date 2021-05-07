@@ -63,7 +63,7 @@ context('Gallery Time', () => {
     .get('[data-cy=to-galleries]').should('contain', 'See Galleries')
   })
 
-  it.only('Should show contacts page from any other page', () => {
+  it('Should show contacts page from any other page', () => {
     cy.get('[data-cy=contact-button]').click()
     .get('[data-cy=contact-card]').should('exist')
     .get('[data-cy=landing-link]').click()
@@ -87,4 +87,19 @@ context('Gallery Time', () => {
     .get('[data-cy=contact-button]').click()
     .get('[data-cy=contact-card]').should('exist')
   })
+
+  it('Should be able to choose the city to look for galleris in', () => {
+    cy.get('[data-cy=landing]').should('exist')
+    .get('[data-cy=header-box]').should('exist')
+    .get('[data-cy=city-name]').should('contain', 'Denver')
+    .get('[data-cy=city-select]').should('exist')
+    .should('contain', 'Select City')
+    .type('Chicago')
+    .get('[data-cy=city-select]').should('contain','Chicago')
+    .get('[data-cy=city-submit]').should('exist')
+    .should('contain', 'Change City')
+    .click()
+    .get('[data-cy=city-name]').should('contain', 'Chicago')
+  })
+
 });
