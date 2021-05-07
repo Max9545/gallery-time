@@ -88,8 +88,10 @@ context('Gallery Time', () => {
     .get('[data-cy=contact-card]').should('exist')
   })
 
-  it.only('Should be able to choose the city to look for galleris in', () => {
-    cy.get('[data-cy=landing]').should('exist')
+  it('Should be able to choose the city to look for galleris in', () => {
+    cy.userCitySearch()
+    cy.visit('http://localhost:3000/')
+    .get('[data-cy=landing]').should('exist')
     .get('[data-cy=city-search-form]').should('exist')
     .should('contain', 'Select City')
     .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Denver, time for culture!')
@@ -102,8 +104,10 @@ context('Gallery Time', () => {
     .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Chicago, time for culture!')
   })
 
-  it.only('Should tell the user if their city of choice cannot be found', () => {
-    cy.get('[data-cy=landing]').should('exist')
+  it('Should tell the user if their city of choice cannot be found', () => {
+    cy.userCitySearch()
+    cy.visit('http://localhost:3000/')
+    .get('[data-cy=landing]').should('exist')
     .get('[data-cy=city-search-form]').should('exist')
     .should('contain', 'Select City')
     .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Denver, time for culture!')
