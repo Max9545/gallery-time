@@ -1,7 +1,7 @@
 .landing {
   background: url('../../img/background-card.jpg');
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 
 .city-img {
   margin: 0;
-  height: 75vh;
+  height: 72vh;
   width: 90vw;
   object-fit: cover;
 }

@@ -29,7 +29,7 @@ function LandingPage ({ city, photo, setUserCity, citySearchError }) {
     <Header />
     {!photo && <OffLine />}
     <article className='city-container'>
-     {error && <p className='city-name'data-cy="city-name">Could not find that city, still looking at galleries in {city.name}</p>}
+     {error && <p className='city-name'data-cy="city-name">Could not find that city, still looking at galleries in {city.name}!</p>}
      {!error && <p className='city-name'data-cy="city-name">You are looking at galleries in {city.name}, time for culture!</p>}
     </article>
     <form className='city-search-form' data-cy='city-search-form'>

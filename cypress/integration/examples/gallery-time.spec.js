@@ -8,7 +8,7 @@ context('Gallery Time', () => {
   it('Should have a Landing Page that has Denver, img and Link', () => {
     cy.get('[data-cy=landing]').should('exist')
     .get('[data-cy=header-box]').should('exist')
-    .get('[data-cy=city-name]').should('contain', 'Denver')
+    .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Denver, time for culture!')
     .get('[data-cy=city-img]').should('exist')
     .get('[data-cy=to-galleries]').should('contain', 'See Galleries')
   })
@@ -88,18 +88,31 @@ context('Gallery Time', () => {
     .get('[data-cy=contact-card]').should('exist')
   })
 
-  it('Should be able to choose the city to look for galleris in', () => {
+  it.only('Should be able to choose the city to look for galleris in', () => {
     cy.get('[data-cy=landing]').should('exist')
-    .get('[data-cy=header-box]').should('exist')
-    .get('[data-cy=city-name]').should('contain', 'Denver')
-    .get('[data-cy=city-select]').should('exist')
+    .get('[data-cy=city-search-form]').should('exist')
     .should('contain', 'Select City')
+    .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Denver, time for culture!')
+    .get('[data-cy=city-select]').should('exist')
     .type('Chicago')
-    .get('[data-cy=city-select]').should('contain','Chicago')
+    .get('[data-cy=city-select]').should('have.value','Chicago')
     .get('[data-cy=city-submit]').should('exist')
     .should('contain', 'Change City')
     .click()
-    .get('[data-cy=city-name]').should('contain', 'Chicago')
+    .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Chicago, time for culture!')
   })
 
+  it.only('Should tell the user if their city of choice cannot be found', () => {
+    cy.get('[data-cy=landing]').should('exist')
+    .get('[data-cy=city-search-form]').should('exist')
+    .should('contain', 'Select City')
+    .get('[data-cy=city-name]').should('contain', 'You are looking at galleries in Denver, time for culture!')
+    .get('[data-cy=city-select]').should('exist')
+    .type('fasdfadsfassfdaa')
+    .get('[data-cy=city-select]').should('have.value','fasdfadsfassfdaa')
+    .get('[data-cy=city-submit]').should('exist')
+    .should('contain', 'Change City')
+    .click()
+    .get('[data-cy=city-name]').should('contain', 'Could not find that city, still looking at galleries in Denver!')
+  })
 });
