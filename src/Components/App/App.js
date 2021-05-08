@@ -2,7 +2,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import {Route, Switch} from 'react-router-dom';
 import Galleries from '../Galleries/Galleries.js';
 import { useState, useEffect } from 'react';
-import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch } from '../../apiCalls.js';
+import { geoLocatePost,citySearch, photoSearch, galleriesSearch, detailsSearch, selectLocation } from '../../apiCalls.js';
 import GalleryDetail from '../GalleryDetail/GalleryDetail.js';
 import FavoriteGalleries from '../FavoriteGalleries/FavoriteGalleries.js';
 import ContactPage from '../ContactPage/ContactPage.js';
@@ -16,6 +16,8 @@ function App() {
   const [photo, setPhoto] = useState()
   const [galleries, setGalleries] = useState();
   const [detailsVisited, setDetailsVisited] = useState([])
+  const [citySearchError, setCitySeachError] = useState(false)
+
 
   useEffect(() => {
     geoLocatePost()
@@ -58,18 +60,25 @@ function App() {
       .then(galleryDetail => setDetailsVisited([galleryDetail, ...detailsVisited]))
   }
 
-  const findDetails = id => {
-    const detailToShow = detailsVisited.find(detailVisited => detailVisited.result.place_id === id)
-    return detailToShow 
-  } 
+  const setUserCity = userCity => {
+    selectLocation(userCity)
+    .then(data => {
+      if(data.data.length !== 0) {
+        setGeoLocation({ lat: data.data[0].latitude, lng: data.data[0].longitude })
+        setCitySeachError(false)
+      } else if (data.data.length === 0) {
+        setCitySeachError(true)
+      }
+    })
+  }
 
   return (
       <Switch className='app'>
-        {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo}/>}/>}
+        {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo} setUserCity={setUserCity} citySearchError={citySearchError}/>}/>}
         <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
-        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>
+        {detailsVisited[0] && <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={detailsVisited[0]} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>}
       </Switch>
   );
 }

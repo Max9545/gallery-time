@@ -1,11 +1,26 @@
+
 import './GalleryDetail.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header.js';
 import { Link } from 'react-router-dom';
 import OffLine from '../OffLine/OffLine.js'
 import PropTypes from 'prop-types';
+import { photoSearch } from '../../apiCalls';
+import defaultImage from '../../img/abstract_painting.jpeg'
 
 function GalleryDetail({ addToFavorites, galleryDetail, city }) {
+
+
+  const [galleryPhoto, setGalleryPhoto] = useState()
+
+  useEffect(() => {
+    if (galleryDetail.result.photos !== undefined) {
+      photoSearch(galleryDetail.result.photos[0].photo_reference)
+      .then(data => setGalleryPhoto(data))
+    } else {
+      setGalleryPhoto(defaultImage)
+    }
+  }, [galleryDetail])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
@@ -15,11 +30,14 @@ function GalleryDetail({ addToFavorites, galleryDetail, city }) {
         <>
           <article className='styling-container' data-cy='styling-container'>
             <h1 className='gallery-name' data-cy='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
+            <div>
+             {galleryPhoto && <img className='gallery-photo' data-cy='gallery-photo' aly='Photo of gallery outside or inside' src={galleryPhoto}/>}
+            </div>
             <p className='phone'>{`Phone Number`}</p>
             <a className='phone' href={galleryDetail && `${galleryDetail.result.international_phone_number}`}>{galleryDetail && galleryDetail.result.international_phone_number}</a>
           </article>
           <Link className='detail-to-galleries' to={`/city/${city}`}>Back To Galleries</Link>
-          <article className='styling-container hours'>
+          <article className='styling-container hours' data-cy='hours'>
             {!galleryDetail.result.opening_hours && <p>The hours for this gallery are not available at this time.</p>}
             {galleryDetail.result.opening_hours &&
             <>

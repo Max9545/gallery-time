@@ -1,7 +1,6 @@
 Cypress.Commands.add('allStubbedAPICalls', () => {
   cy.detailsSearchAPICall()
   cy.galleriesSearchAPICall()
-  // cy.photoSearchAPICall()
   cy.citySearchAPICall()
   cy.geoLocationAPICall()
   cy.visit('http://localhost:3000/')
@@ -25,15 +24,6 @@ Cypress.Commands.add('citySearchAPICall', () => {
     }, { fixture: 'denverNearbySearch' })
 })
 
-// Cypress.Commands.add('photoSearchAPICall', () => {
-//   cy.intercept(`https://pure-hollows-05817.herokuapp.com/https://maps.googleapis.com/maps/api/place/photo?maxwidth=576&photoreference=ATtYBwLoNDtdNcpudhiFZlfa7gZHwJ3KADFwqrKeA0EdIZ_3JHCzccWDbB-YOIlwAAdlMaEw9Yi4vFNSzOufwusWtjQGIveoHgWoe5KBjqXesmw4_4bQ6zWlCFzYdjnY-DJLio8DDlvrJweDLg3xfsDRdEvOcqUAXonulqYJFPCY82sjSDNy&key=${Cypress.env('API_KEY')}`, {
-//       method: 'POST',
-//       headers: {
-//         "content-type": "application/json"
-//       }
-//     }, { fixture: 'denverImg' })
-// })
-
 Cypress.Commands.add('galleriesSearchAPICall', () => {
   cy.intercept(`https://pure-hollows-05817.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.7115392,-105.05420799999999&radius=3220&type=art_gallery&key=${Cypress.env('API_KEY')}`, {
       method: 'POST',
@@ -52,4 +42,21 @@ Cypress.Commands.add('detailsSearchAPICall', () => {
     }, { fixture: 'rockyMountainCollegeOfArt' })
 })
 
+Cypress.Commands.add('userCitySearch', () => {
+  cy.intercept(`http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=Chicago`, {
+    method: 'GET',
+    headers: {
+      "content-type": "application/json"
+    }
+  }, { fixture: 'chicagoUserSearch' })
+})
+
+Cypress.Commands.add('badCitySearch', () => {
+  cy.intercept(`http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=fasdfadsfassfdaa`, {
+    method: 'GET',
+    headers: {
+      "content-type": "application/json"
+    }
+  }, { fixture: 'badUserSearch' })
+})
 

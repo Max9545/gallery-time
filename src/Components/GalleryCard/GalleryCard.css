@@ -16,6 +16,11 @@
   padding: 1%;
 }
 
+.gallery-card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 35px rgba(212, 175, 55, .75)#f0e806;
+}
+
 .name {
   margin: 1% 0 0 0;
   color: rgba(38, 50, 56);
