@@ -52,7 +52,7 @@ Cypress.Commands.add('userCitySearch', () => {
 })
 
 Cypress.Commands.add('badCitySearch', () => {
-  cy.intercept(`http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=fasdfadsfassfdaa`, {
+  cy.intercept(`http://api.positionstack.com/v1/forward?access_key=${REACT_APP_POSITON_KEY}&country=US&limit=1&query=fasdfadsfassfdaa`, {
     method: 'GET',
     headers: {
       "content-type": "application/json"
