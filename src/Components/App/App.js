@@ -72,13 +72,28 @@ function App() {
     })
   }
 
+  const findDetails = id => {
+    const detailSearch = detailsVisited.find(detailVisited => { 
+      console.log(detailVisited)
+      console.log(id)
+      return detailVisited.result.place_id === id})
+    if (detailSearch === undefined) {
+      const detailToShow = {fail: true}
+      return detailToShow
+    } else if (detailSearch !== undefined) {
+      const detailToShow = detailSearch
+      return detailToShow
+    }
+  }
+
+
   return (
       <Switch className='app'>
         {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo} setUserCity={setUserCity} citySearchError={citySearchError}/>}/>}
         <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
-        {detailsVisited[0] && <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={detailsVisited[0]} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>}
+        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>
       </Switch>
   );
 }

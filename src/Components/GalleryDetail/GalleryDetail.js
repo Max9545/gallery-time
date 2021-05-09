@@ -14,19 +14,18 @@ function GalleryDetail({ addToFavorites, galleryDetail, city }) {
   const [galleryPhoto, setGalleryPhoto] = useState()
 
   useEffect(() => {
-    if (galleryDetail.result.photos !== undefined) {
+    if (galleryDetail.result !== undefined) {
       photoSearch(galleryDetail.result.photos[0].photo_reference)
       .then(data => setGalleryPhoto(data))
     } else {
       setGalleryPhoto(defaultImage)
     }
-  }, [galleryDetail])
+  }, [galleryDetail.result])
 
   return (
     <section className='detail-gallery' data-cy='detail-gallery'>
       <Header />
-        {!galleryDetail && <OffLine />}
-        {galleryDetail &&
+        {galleryDetail.result && !galleryDetail.fail &&
         <>
           <article className='styling-container' data-cy='styling-container'>
             <h1 className='gallery-name' data-cy='gallery-name'>{galleryDetail.result.name && galleryDetail.result.name}</h1>
@@ -61,6 +60,7 @@ function GalleryDetail({ addToFavorites, galleryDetail, city }) {
             <Link to='/favorites' className='see-favorites-galleryDetail' data-cy='see-favorites-galleryDetail'>See Favorites</Link>
           </article>
         </>}
+        {galleryDetail.fail && !galleryDetail.result && <OffLine />}
     </section>
   )
 }
