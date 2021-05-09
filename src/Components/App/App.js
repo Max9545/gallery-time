@@ -16,6 +16,7 @@ function App() {
   const [photo, setPhoto] = useState()
   const [galleries, setGalleries] = useState();
   const [detailsVisited, setDetailsVisited] = useState([])
+  const [galleryPhoto, setGalleryPhoto] = useState()
   const [citySearchError, setCitySeachError] = useState(false)
 
 
@@ -93,7 +94,7 @@ function App() {
         <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
-        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites} city={city}/>}/>
+        <Route exact path='/gallery/:gallery' render={({ match }) => <GalleryDetail galleryDetail={findDetails(match.params.gallery)} id={ match.params.gallery } addToFavorites={addToFavorites} city={city} setGalleryPhoto={setGalleryPhoto} galleryPhoto={galleryPhoto}/>}/>
       </Switch>
   );
 }

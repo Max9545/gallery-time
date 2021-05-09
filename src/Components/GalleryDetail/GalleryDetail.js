@@ -8,10 +8,9 @@ import PropTypes from 'prop-types';
 import { photoSearch } from '../../apiCalls';
 import defaultImage from '../../img/abstract_painting.jpeg'
 
-function GalleryDetail({ addToFavorites, galleryDetail, city }) {
+function GalleryDetail({ addToFavorites, galleryDetail, city, setGalleryPhoto, galleryPhoto }) {
 
 
-  const [galleryPhoto, setGalleryPhoto] = useState()
 
   useEffect(() => {
     if (galleryDetail.result !== undefined) {
