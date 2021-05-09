@@ -45,7 +45,7 @@ This project utilizes Create React App to build an application which allows user
 - PWA technology
 - Googled-Places API
 - Google-Geolocation API
-- positionstack Geocoding API
+- Positionstack Geocoding API
 
 ## Set-up Instructions
 
