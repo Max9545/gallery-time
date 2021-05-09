@@ -27,8 +27,8 @@ This project utilizes Create React App to build an application which allows user
 - Continue working with React components & asynchronous JS using Cypress testing
 - Create a multi-page UX using Router
 - Use the stretch technology of PWA to implement a React app to have native like behavior of running offline.
-- Use Google JS api and larger databases.
-- Deployment using
+- Use Google Places API and larger databases.
+- Deployment using Heroku
 
 - [Deployed app](https://gallery-time.herokuapp.com/)
 - [Project Brief and Rubric](https://frontend.turing.io/projects/module-3/stretch.html)
@@ -43,8 +43,9 @@ This project utilizes Create React App to build an application which allows user
 - CSS
 - Cypress
 - PWA technology
-- Googled-places api
-
+- Googled-Places API
+- Google-Geolocation API
+- positionstack Geocoding API
 
 ## Set-up Instructions
 
@@ -56,13 +57,16 @@ visit deployed site [here]()
 - Run `npm install`
 - Run `npm start`
 - visit http://localhost:3000/
-- will need a google api key
+- will need a google API key
+- will need a positionstack API key
 - make .env file in root directory and paste this in there:
-- REACT_APP_API_KEY=Your_KEY_HERE
+- REACT_APP_API_KEY=YOUR_KEY_HERE
+- REACT_APP_POSITION_KEY=YOUR_KEY_HERE
 - Torun Cypress testing add cypress.json needs this:
 {
   "env": {
-    "API_KEY": "process.env.REACT_APP_API_KEY"
+    "API_KEY": "process.env.REACT_APP_API_KEY",
+    "REACT_APP_POSITION_KEY"="process.env.REACT_APP_POSITION_KEY"
   }
 }
 
