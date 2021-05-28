@@ -55,6 +55,7 @@ export const detailsSearch = (placeId) => {
 }
 
 export const selectLocation = (city) => {
-  return fetch(`https://pure-hollows-05817.herokuapp.com/http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=${city}`)
+  const formattedCity = city.toLowerCase()
+  return fetch(`https://pure-hollows-05817.herokuapp.com/http://api.positionstack.com/v1/forward?access_key=816d21fe8bc88b24b44c05e76014dcfd&country=US&limit=1&query=${formattedCity}`)
   .then((res) => res.json())
 }
