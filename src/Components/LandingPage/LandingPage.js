@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import OffLine from '../OffLine/OffLine';
 import PropTypes from 'prop-types';
 
-function LandingPage ({ city, photo, setUserCity, citySearchError }) {
+function LandingPage ({ city, photo, setUserCity, citySearchError, positionStackError }) {
 
   const [cityToSelect, setCityToSelect] = useState() 
   const [error, setError] = useState(false)
@@ -29,6 +29,7 @@ function LandingPage ({ city, photo, setUserCity, citySearchError }) {
     <Header />
     {!photo && <OffLine />}
     <article className='city-container'>
+      {positionStackError && <p className='city-name'data-cy="city-name">{positionStackError}</p>}
      {error && <p className='city-name'data-cy="city-name">Could not find that city, still looking at galleries in {city.name}!</p>}
      {!error && <p className='city-name'data-cy="city-name">You are looking at galleries in {city.name}, time for culture!</p>}
     </article>

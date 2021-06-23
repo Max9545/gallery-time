@@ -18,6 +18,7 @@ function App() {
   const [detailsVisited, setDetailsVisited] = useState([])
   const [galleryPhoto, setGalleryPhoto] = useState()
   const [citySearchError, setCitySeachError] = useState(false)
+  const [positionStackError, setPositionStackError] = useState('')
 
 
   useEffect(() => {
@@ -64,19 +65,21 @@ function App() {
   const setUserCity = userCity => {
     selectLocation(userCity)
     .then(data => {
-      if(data.data.length !== 0) {
+      if(data.error === 'internal_error') {
+        setPositionStackError('The cite used to find cities (status.positionstack.com) is temporarily down, try again soon')
+        setTimeout(setPositionStackError(''), 4000)
+      } else if (data.error || data.data.length === 0) {
+        console.log(data)
+        setCitySeachError(true)
+      } else if (data.data.length !== 0) {
         setGeoLocation({ lat: data.data[0].latitude, lng: data.data[0].longitude })
         setCitySeachError(false)
-      } else if (data.data.length === 0) {
-        setCitySeachError(true)
-      }
+      } 
     })
   }
 
   const findDetails = id => {
     const detailSearch = detailsVisited.find(detailVisited => { 
-      console.log(detailVisited)
-      console.log(id)
       return detailVisited.result.place_id === id})
     if (detailSearch === undefined) {
       const detailToShow = {fail: true}
@@ -90,7 +93,7 @@ function App() {
 
   return (
       <Switch className='app'>
-        {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo} setUserCity={setUserCity} citySearchError={citySearchError}/>}/>}
+        {photo && <Route exact path='/' render={() => <LandingPage city={city.results[0]} photo={photo} setUserCity={setUserCity} citySearchError={citySearchError} positionStackError={positionStackError}/>}/>}
         <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
         <Route exact path='/city/:city' render={({ match }) => <Galleries addToDetails={addToDetails} galleries={galleries} geoLocation={geoLocation} city={match.params.city}/>}/>
