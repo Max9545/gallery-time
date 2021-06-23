@@ -80,8 +80,6 @@ function App() {
 
   const findDetails = id => {
     const detailSearch = detailsVisited.find(detailVisited => { 
-      console.log(detailVisited)
-      console.log(id)
       return detailVisited.result.place_id === id})
     if (detailSearch === undefined) {
       const detailToShow = {fail: true}
