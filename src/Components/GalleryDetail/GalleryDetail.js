@@ -13,12 +13,12 @@ function GalleryDetail({ addToFavorites, galleryDetail, city, setGalleryPhoto, g
 
 
   useEffect(() => {
-    if (galleryDetail.result !== undefined) {
-      photoSearch(galleryDetail.result.photos[0].photo_reference)
-      .then(data => setGalleryPhoto(data))
-    } else {
-      setGalleryPhoto(defaultImage)
-    }
+    if(galleryDetail.result && galleryDetail.result.photos !== undefined) {
+        photoSearch(galleryDetail.result.photos[0].photo_reference)
+        .then(data => setGalleryPhoto(data))
+      } else {
+        setGalleryPhoto(defaultImage)
+      }
   }, [galleryDetail.result])
 
   return (
