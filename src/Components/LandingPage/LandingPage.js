@@ -20,8 +20,10 @@ function LandingPage ({ city, photo, setUserCity, citySearchError, positionStack
 
   const handleSubmit = event => {
     event.preventDefault()
-    setUserCity(cityToSelect)
-    setCityToSelect('')
+    if(cityToSelect) {
+      setUserCity(cityToSelect)
+      setCityToSelect('')
+    }
   }
 
   return (
