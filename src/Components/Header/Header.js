@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Header () {
   return (
     <section className='header' data-cy='header-box'>
-      <Link className='header-link' data-cy='landing-link' to='/'>
+      <Link className='header-link' data-cy='landing-link' to='/home'>
         <img className='logo' alt="logo" src='https://static.thenounproject.com/png/2381701-200.png'/>
       </Link>
       <article className='header-container'>
