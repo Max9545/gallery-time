@@ -20,12 +20,15 @@ function App() {
   const [galleryPhoto, setGalleryPhoto] = useState()
   const [citySearchError, setCitySeachError] = useState(false)
   const [positionStackError, setPositionStackError] = useState('')
+  const [permission, setPermission] = useState(false)
 
 
   useEffect(() => {
-    geoLocatePost()
-    .then(data => setGeoLocation({lat: data.location.lat, lng: data.location.lng}))
-  }, [])
+    if (permission) {
+      geoLocatePost()
+      .then(data => setGeoLocation({lat: data.location.lat, lng: data.location.lng}))
+    }
+  }, [permission])
 
   useEffect(() => {
     if (geoLocation) {
@@ -94,7 +97,7 @@ function App() {
 
   return (
       <Switch className='app'>
-        <Route exact path='/' component={Permission}/>
+        <Route exact path='/' render={() => <Permission setCity={setCity} setPermission={setPermission}/>}/>
         {photo && <Route exact path='/home' render={() => <LandingPage city={city.results[0]} photo={photo} setUserCity={setUserCity} citySearchError={citySearchError} positionStackError={positionStackError}/>}/>}
         <Route exact path="/contact" component={ ContactPage }/>
         <Route exact path='/favorites' render={() => <FavoriteGalleries favorites={favorites} addToDetails={addToDetails} removeFromFavorites={removeFromFavorites}/>}/>
