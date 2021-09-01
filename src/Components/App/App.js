@@ -28,7 +28,7 @@ function App() {
       geoLocatePost()
       .then(data => setGeoLocation({lat: data.location.lat, lng: data.location.lng}))
     }
-  }, [])
+  }, [permission])
 
   useEffect(() => {
     if (geoLocation) {
