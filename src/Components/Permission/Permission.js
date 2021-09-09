@@ -29,7 +29,7 @@ function Permission({ setUserCity, setPermission }) {
       </div>
       <article className='permission-card'>
         <div>
-          <h3>Allow us use your device's location to locate nearby galleries?</h3>
+          <h3>Allow Gallery Time to use your device's location to locate nearby galleries?</h3>
           <Link to='/home' className='yes-to-permission'onClick={() => handlePermission()}>Yes</Link>
         </div>
         <div>
