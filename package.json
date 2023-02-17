@@ -11,10 +11,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1",
-    "engines": {
-      "node": "18"
-    }
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "cypress": "cypress open",
@@ -45,5 +42,17 @@
     "cypress": "^7.0.1",
     "cypress-dotenv": "^1.2.2",
     "dotenv": "^8.2.0"
-  }
+  },
+  "description": "[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://github.com/Afoucheaux) [![GitHub](https://img.shields.io/badge/GitHub-black.svg?&style=flat-square&logo=github&logoColor=white)](https://www.linkedin.com/in/aaron-foucheaux-891626207/) - Aaron Foucheaux",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max9545/gallery-time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Max9545/gallery-time/issues"
+  },
+  "homepage": "https://github.com/Max9545/gallery-time#readme"
 }
